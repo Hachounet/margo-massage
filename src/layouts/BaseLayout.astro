@@ -33,9 +33,9 @@ const { description, title, preloadedImage } = Astro.props;
     <meta property="og:image:secure_url" content="/assets/images/logo-small.png" />
 
     <!--Favicons-->
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v1">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/margomassage-cropped.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/margomassage-cropped.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/margomassage-cropped.svg">
     <link rel="manifest" href="/assets/favicons/site.webmanifest">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
@@ -77,6 +77,13 @@ const { description, title, preloadedImage } = Astro.props;
     <Footer />
   </body>
 </html>
+
+<style>
+  #main {
+    padding-top: clamp(5.75rem, 1.68vw, 10.625rem );
+  }
+</style>
+
 
 <script is:inline>
   // Script to handle dark mode - it is inlined on purpose to avoid FOUC

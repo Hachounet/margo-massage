@@ -5,18 +5,15 @@ import CTA from "../components/CTA.astro";
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "../js/utils"
-import landingImage from "../assets/images/cabinets2.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+import landingImage from "../assets/images/back-massage2.jpg" // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
 const optimizedImage = await getOptimizedImage(landingImage)
 ---
 
 <BaseLayout
-  title="About"
-  description="Meta description for the page"
+  title="Avis clients"
+  description="Page des avis clients de MargoMassage, masseuse à domicile à La Rochelle"
   preloadedImage = {optimizedImage}
 >
-  <!-- ============================================ -->
-  <!--                    LANDING                   -->
-  <!-- ============================================ -->
 
  
 
@@ -25,26 +22,26 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!-- ============================================ -->
 
   <section id="reviews">
+    
     <div class="container">
+      
       <div class="review">
         <picture>
           <img
             class="profile"
             loading="lazy"
             decoding="async"
-            src="/assets/svgs/profile.svg"
+            src="src/assets/images/icons/unknow-user.svg"
             alt=""
             width="99"
             height="99"
           />
         </picture>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-          recusandae rerum unde similique ratione sapiente necessitatibus natus
-          mollitia nam iusto.
+          Un massage très agréable, les noeuds dans mon dos sont partis et je n'ai pas vu passé l'heure. Je recommande.
         </p>
         <div class="star-group">
-          <span class="name">B Miller<span class="desc">Homeowner</span></span>
+          <span class="name">Valentin GUERIN.<span class="desc">Client(e)</span></span>
           <picture>
             <img
               aria-hidden="true"
@@ -64,150 +61,17 @@ const optimizedImage = await getOptimizedImage(landingImage)
             class="profile"
             loading="lazy"
             decoding="async"
-            src="/assets/svgs/profile.svg"
+            src="src/assets/images/icons/unknow-user.svg"
             alt=""
             width="99"
             height="99"
           />
         </picture>
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-          recusandae rerum unde similique ratione sapiente necessitatibus natus
-          mollitia nam iusto.
+            Trop cool, je n'ai plus du tout mal au dos. Je suis détendu et je me sens bien. Merci beaucoup.
         </p>
         <div class="star-group">
-          <span class="name">Vincent M.<span class="desc">Homeowner</span></span
-          >
-          <picture>
-            <img
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="/assets/svgs/stars.svg"
-              alt="stars"
-              width="91"
-              height="15"
-            />
-          </picture>
-        </div>
-      </div>
-      <div class="review">
-        <picture>
-          <img
-            class="profile"
-            loading="lazy"
-            decoding="async"
-            src="/assets/svgs/profile.svg"
-            alt=""
-            width="99"
-            height="99"
-          />
-        </picture>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-          recusandae rerum unde similique ratione sapiente necessitatibus natus
-          mollitia nam iusto.
-        </p>
-        <div class="star-group">
-          <span class="name">Alex L.<span class="desc">Homeowner</span></span>
-          <picture>
-            <img
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="/assets/svgs/stars.svg"
-              alt="stars"
-              width="91"
-              height="15"
-            />
-          </picture>
-        </div>
-      </div>
-      <div class="review">
-        <picture>
-          <img
-            class="profile"
-            loading="lazy"
-            decoding="async"
-            src="/assets/svgs/profile-woman.svg"
-            alt=""
-            width="99"
-            height="99"
-          />
-        </picture>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-          recusandae rerum unde similique ratione sapiente necessitatibus natus
-          mollitia nam iusto.
-        </p>
-        <div class="star-group">
-          <span class="name"
-            >Arrieana M.<span class="desc">Homeowner</span></span
-          >
-          <picture>
-            <img
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="/assets/svgs/stars.svg"
-              alt="stars"
-              width="91"
-              height="15"
-            />
-          </picture>
-        </div>
-      </div>
-      <div class="review">
-        <picture>
-          <img
-            class="profile"
-            loading="lazy"
-            decoding="async"
-            src="/assets/svgs/profile.svg"
-            alt=""
-            width="99"
-            height="99"
-          />
-        </picture>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-          recusandae rerum unde similique ratione sapiente necessitatibus natus
-          mollitia nam iusto.
-        </p>
-        <div class="star-group">
-          <span class="name">Leo N.<span class="desc">Homeowner</span></span>
-          <picture>
-            <img
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="/assets/svgs/stars.svg"
-              alt="stars"
-              width="91"
-              height="15"
-            />
-          </picture>
-        </div>
-      </div>
-      <div class="review">
-        <picture>
-          <img
-            class="profile"
-            loading="lazy"
-            decoding="async"
-            src="/assets/svgs/profile.svg"
-            alt=""
-            width="99"
-            height="99"
-          />
-        </picture>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed
-          recusandae rerum unde similique ratione sapiente necessitatibus natus
-          mollitia nam iusto.
-        </p>
-        <div class="star-group">
-          <span class="name">Brian A.<span class="desc">Homeowner</span></span>
+          <span class="name">Manon BEAUVOIT.<span class="desc">Client(e)</span></span>
           <picture>
             <img
               aria-hidden="true"

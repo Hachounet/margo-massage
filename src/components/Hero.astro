@@ -1,0 +1,369 @@
+---
+
+---
+
+<!-- ============================================ --><!--                Side by Side                  --><!-- ============================================ -->
+<section id="sbs-1883">
+  <div class="cs-container">
+    <div class="cs-image-group">
+      <picture class="cs-picture">
+        <!--Mobile Image-->
+        <source
+          media="(max-width: 600px)"
+          srcset="src/assets/images/margaux.png"
+        />
+        <!--Tablet and above Image-->
+        <source
+          media="(min-width: 601px)"
+          srcset="src/assets/images/margaux.png"
+        />
+        <img
+          loading="lazy"
+          decoding="async"
+          src="src/assets/images/margaux.png"
+          alt="MargoMassage - Masseuse professionnelle à La Rochelle"
+          width="324"
+          height="467"
+        />
+      </picture>
+      <img
+        class="cs-graphic cs-brown"
+        loading="lazy"
+        decoding="async"
+        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/brown-lines-2.svg"
+        alt="graphic"
+        width="208"
+        height="203"
+        aria-hidden="true"
+      />
+      <img
+        class="cs-graphic cs-peach"
+        loading="lazy"
+        decoding="async"
+        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/ball.svg"
+        alt="graphic"
+        width="56"
+        height="42"
+        aria-hidden="true"
+      />
+      <img
+        class="cs-graphic cs-beige"
+        loading="lazy"
+        decoding="async"
+        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/beige-blob.svg"
+        alt="graphic"
+        width="379"
+        height="394"
+        aria-hidden="true"
+      />
+      <img
+        class="cs-graphic cs-leaf"
+        loading="lazy"
+        decoding="async"
+        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/leaf2.svg"
+        alt="graphic"
+        width="179"
+        height="225"
+        aria-hidden="true"
+      />
+      <img
+        class="cs-graphic cs-lines"
+        loading="lazy"
+        decoding="async"
+        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/beige-lines.svg"
+        alt="graphic"
+        width="189"
+        height="208"
+        aria-hidden="true"
+      />
+      <div class="cs-info">
+        <p class="cs-info-text">
+          <span class="cs-bold cu-font-nexa">Diplômée</span>
+          <span class="cu-font-nexa">de l'AIPA Nepal Massage School Academy</span>
+        </p>
+      </div>
+    </div>
+    <div class="cs-content">
+      <div class="cs-flex">
+        <span class="cs-topper">Massage à domicile à La Rochelle</span>
+        <h2 class="cs-title">MargoMassage, votre experte en bien-être</h2>
+      </div>
+      <p class="cs-text-large">
+        Envie d’un moment de relaxation sans quitter votre cocon ? Je suis Margo, <strong>masseuse professionnelle à La Rochelle</strong>, spécialisée dans le <strong>massage à domicile à La Rochelle</strong>. Profitez d’un <strong>massage relaxant</strong> ou thérapeutique personnalisé, directement chez vous ou sur votre lieu de travail, pour une détente sans contraintes.
+      </p>
+      <p class="cs-text cu-font-nexa">
+        Chaque <strong>massage bien-être à La Rochelle</strong> est conçu pour répondre à vos besoins uniques, qu’il s’agisse de soulager les tensions musculaires, de réduire le stress ou de retrouver une harmonie intérieure. Avec mon expertise et mon approche sur mesure, offrez-vous une expérience de <strong>massage à domicile</strong> qui allie confort, sérénité et professionnalisme.
+      </p>
+      <a
+        href="/contact"
+        class="cs-button-solid cu-font-nexa"
+      >Prendre rendez-vous</a>
+    </div>
+  </div>
+</section>
+<style>
+/*-- -------------------------- -->
+<---        Side by Side        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbs-1883 {
+    width: 100%;
+    padding: var(--sectionPadding);
+    /* Padding-top is arbitrary value made to match more or less the dynamic header height because header is overlapping on Hero */
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* aligns content to the left, set to center to centrally align */
+    align-items: flex-start;
+    position: relative;
+    z-index: 1;
+  }
+  #sbs-1883 .cs-container {
+    width: 100%;
+    /* changes to 1280px at desktop */
+    max-width: 36.5rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 48px - 80px */
+    gap: clamp(3rem, 6vw, 5rem);
+  }
+  #sbs-1883 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 35.625rem;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+    position: relative;
+    z-index: 3;
+  }
+  #sbs-1883 .cs-image-group {
+    font-size: min(2.29vw, 0.9rem);
+    width: 39.375em;
+    height: 45.625em;
+    display: block;
+    position: relative;
+    z-index: 1;
+  }
+  #sbs-1883 .cs-picture {
+    width: 32.625em;
+    height: 42.5em;
+    box-sizing: border-box;
+    background-color: #dab692;
+    overflow: hidden;
+    border: 8px solid #dab692;
+    border-radius: 16.25rem;
+    position: absolute;
+    z-index: -1;
+  }
+  #sbs-1883 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.7s;
+  }
+  #sbs-1883 .cs-graphic {
+    height: auto;
+    position: absolute;
+  }
+  #sbs-1883 .cs-brown {
+    width: 15.125em;
+    height: auto;
+    top: 1.625em;
+    right: 0.8125em;
+    z-index: -2;
+  }
+  #sbs-1883 .cs-peach {
+    width: 3.625em;
+    height: auto;
+    top: 0.375em;
+    right: 6.8125em;
+  }
+  #sbs-1883 .cs-beige {
+    width: 22em;
+    height: auto;
+    top: 4.4375em;
+    right: 1em;
+    z-index: -3;
+  }
+  #sbs-1883 .cs-leaf {
+    width: 14.0625em;
+    height: auto;
+    bottom: 0;
+    left: 1em;
+    z-index: 1;
+  }
+  #sbs-1883 .cs-lines {
+    width: 11em;
+    height: auto;
+    bottom: 0;
+  }
+  #sbs-1883 .cs-info {
+    width: 50%;
+    max-width: 19.0625rem;
+    padding: 6.25em 2.5em;
+    background-color: var(--primary);
+    border-radius: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  #sbs-1883 .cs-info-text {
+    /* 14px - 20px */
+    font-size: clamp(0.875rem, 3.5vw, 1.25rem);
+    font-weight: 600;
+    line-height: 1.6em;
+    text-align: center;
+    max-width: 13.9375em;
+    margin: 0;
+    color: var(--bodyTextColorWhite);
+  }
+  #sbs-1883 .cs-bold {
+    /* 16px - 24x */
+    font-size: clamp(1rem, 3.5vw, 1.5rem);
+    font-weight: 600;
+    line-height: 1.2em;
+    margin: 0 0 0.25rem;
+    color: var(--headerColor);
+    display: block;
+  }
+  #sbs-1883 .cs-text-large {
+    font-size: 1.25rem;
+    line-height: 1.5em;
+    margin: 0 0 0.75rem;
+    color: var(--headerColor);
+  }
+  #sbs-1883 .cs-text {
+    margin-bottom: 0.75rem;
+  }
+  #sbs-1883 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #sbs-1883 .cs-button-solid {
+    font-size: 1rem;
+    font-weight: 700;
+    /* 46px - 56px */
+    line-height: clamp(2.875em, 5.5vw, 3.5em);
+    text-align: center;
+    text-decoration: none;
+    min-width: 9.375rem;
+    margin: 0;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    background-color: var(--secondary);
+    overflow: hidden;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    transition: color 0.3s;
+  }
+  #sbs-1883 .cs-button-solid:before {
+    content: "";
+    width: 0;
+    height: 100%;
+    background: #000;
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
+  }
+  #sbs-1883 .cs-button-solid:hover {
+    color: #fff;
+  }
+  #sbs-1883 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #sbs-1883 .cs-container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+  #sbs-1883 .cs-content {
+    /* 48px - 64px */
+    padding: clamp(3rem, 5vw, 4rem) 0;
+  }
+  #sbs-1883 .cs-image-group {
+    font-size: min(1.27vw, 1rem);
+    min-height: 45.625em;
+    height: auto;
+    flex: none;
+  }
+  #sbs-1883 .cs-picture {
+    height: 93.150685%;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #sbs-1883 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #sbs-1883 .cs-bold,
+  body.dark-mode #sbs-1883 .cs-text-large,
+  body.dark-mode #sbs-1883 .cs-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #sbs-1883 .cs-text,
+  body.dark-mode #sbs-1883 .cs-info-text {
+    opacity: 0.8;
+  }
+  body.dark-mode #sbs-1883 .cs-picture {
+    border-color: var(--accent);
+  }
+  body.dark-mode #sbs-1883 .cs-info {
+    background-color: var(--medium);
+  }
+  body.dark-mode #sbs-1883 .cs-graphic {
+    opacity: 0.6;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #sbs-1883 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #sbs-1883 .cs-bold,
+  body.dark-mode #sbs-1883 .cs-text-large,
+  body.dark-mode #sbs-1883 .cs-title {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #sbs-1883 .cs-text,
+  body.dark-mode #sbs-1883 .cs-info-text {
+    opacity: 0.8;
+  }
+  body.dark-mode #sbs-1883 .cs-picture {
+    border-color: var(--accent);
+  }
+  body.dark-mode #sbs-1883 .cs-info {
+    background-color: var(--medium);
+  }
+  body.dark-mode #sbs-1883 .cs-graphic {
+    opacity: 0.6;
+  }
+}
+                                
+</style>
+
+

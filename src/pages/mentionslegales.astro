@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContactAlternative from "../components/ContactAlternative.astro";
-import client from "../data/client.json";
+import MentionsLegales from "../components/MentionsLegales.astro";
+import CTA from "../components/CTA.astro";
 
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
@@ -11,11 +11,13 @@ const optimizedImage = await getOptimizedImage(landingImage)
 ---
 
 <BaseLayout
-  title="Contact"
-  description="Page contact de MargoMassage, masseuse à domicile à La Rochelle"
+  title="Mentions légales"
+  description="Mentions légales de MargoMassage, masseuse à domicile à La Rochelle"
   preloadedImage = {optimizedImage}
 >
-<ContactAlternative/>
+
+<MentionsLegales/>
+<CTA/>
 </BaseLayout>
 
 <style>

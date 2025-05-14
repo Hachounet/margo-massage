@@ -1,0 +1,222 @@
+---
+
+import massages from '../data/massages.json';
+---
+
+
+
+<!-- ============================================ --><!--                  Pricing                     --><!-- ============================================ -->
+<section id="pricing-976">
+  <div class="cs-container">
+    <div class="cs-content">
+      <span class="cs-topper">Tarifs</span>
+      <h2 class="cs-title cu-font-nexa">Les différents massages</h2>
+      <!--Menu-->
+      <ul class="cs-menu-group">
+        {massages.map((item) => (
+          <li class="cs-menu-item">
+            <h3 class="cs-h3">
+              <span class="cs-header cu-font-nexa">{item.name}</span>
+              <span class="cs-price">{item.price}</span>
+            </h3>
+            <p class="cs-menu-text cu-font-nexa">{item.pricedescription}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <picture class="cs-picture">
+      <!--Mobile Image-->
+      <source
+        media="(max-width: 600px)"
+        srcset="../src/assets/images/margaux2.png"
+      />
+      <!--Tablet and above Image-->
+      <source
+        media="(min-width: 601px)"
+        srcset="../src/assets/images/margaux2.png"
+      />
+      <img
+        loading="lazy"
+        decoding="async"
+        src="../src/assets/images/margaux2.png"
+        alt="hair salon"
+        width="521"
+        height="640"
+      />
+    </picture>
+  </div>
+</section>
+
+<style>
+  /*-- -------------------------- -->
+<---          Pricing           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #pricing-976 {
+        padding: var(--sectionPadding);
+    }
+    #pricing-976 .cs-container {
+        width: 100%;
+        /* changes to 1280px at tablet */
+        max-width: 34.375rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #pricing-976 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: left;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: flex-start;
+    }
+
+    #pricing-976 .cs-title {
+        margin: 0 0 2rem 0;
+    }
+    #pricing-976 .cs-menu {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        column-gap: 1.25rem;
+        /* 28px - 40px */
+        row-gap: clamp(1.75rem, 3vw, 2.5rem);
+    }
+    #pricing-976 .cs-menu-group {
+        width: 100%;
+        max-width: 39.375rem;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* 28px - 40px */
+        gap: clamp(1.75rem, 3vw, 2.5rem);
+    }
+    #pricing-976 .cs-menu-item {
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+    #pricing-976 .cs-h3 {
+        width: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1.5rem;
+        position: relative;
+    }
+    #pricing-976 .cs-h3:before {
+        /* grey line */
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: #e8e8e8;
+        opacity: 1;
+        position: absolute;
+        display: block;
+        top: 0.8125rem;
+        left: 0;
+        z-index: -1;
+    }
+    #pricing-976 .cs-header {
+        /* 20px - 25px */
+        font-size: clamp(1.25rem, 2vw, 1.5625rem);
+        line-height: 1.2em;
+        text-align: inherit;
+        font-weight: 700;
+        max-width: 25rem;
+        padding-right: 0.5rem;
+        background-color: #fff;
+        color: var(--headerColor);
+    }
+    #pricing-976 .cs-price {
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 400;
+        padding-left: 0.5rem;
+        background-color: #fff;
+        color: var(--headerColor);
+    }
+    #pricing-976 .cs-menu-text {
+        font-size: 1rem;
+        line-height: 1.5em;
+        text-align: inherit;
+        margin: 0;
+        color: var(--bodyTextColor);
+    }
+    #pricing-976 .cs-picture {
+        width: 100%;
+        min-height: 23.75rem;
+        display: block;
+        /* sends it to the top */
+        order: -1;
+        position: relative;
+        
+        
+        
+    }
+    #pricing-976 .cs-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border: 8px solid #dab692;  /* added */
+        border-radius: 16rem; /* added */
+        
+        
+        
+      
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #pricing-976 .cs-container {
+        max-width: 80rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    #pricing-976 .cs-menu-group {
+        width: 100%;
+    }
+    #pricing-976 .cs-picture {
+        max-width: 32.5625rem;
+        /* sends it to the right in the 2nd position */
+        order: 2;
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #pricing-976 .cs-title,
+    body.dark-mode #pricing-976 .cs-header,
+    body.dark-mode #pricing-976 .cs-menu-text,
+    body.dark-mode #pricing-976 .cs-price {
+        color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #pricing-976 .cs-header,
+    body.dark-mode #pricing-976 .cs-price {
+        background-color: var(--dark);
+    }
+    body.dark-mode #pricing-976 .cs-menu-text {
+        opacity: 0.8;
+    }
+}
+
+                                
+</style>

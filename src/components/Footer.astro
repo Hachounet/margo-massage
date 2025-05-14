@@ -19,49 +19,65 @@ import WavesUp from './WavesUp.astro';
           aria-hidden="true"
           loading="lazy"
           decoding="async"
-          src="https://csimg.nyc3.digitaloceanspaces.com/Footer/logo.svg"
+          src="/src/assets/images/icons/margomassage-cropped.svg"
           alt="logo"
           width="240"
           height="32"
         />
       </a>
+    
+    </div>
+    <!-- Links -->
+    <ul class="cs-nav">
+      <li class="cs-nav-li">
+        <span class="cs-header">Contact</span>
+      </li>
+      <li class="cs-nav-li">
+        <a
+          class="cs-nav-link"
+          href={`tel:${client.phoneForTel}`}
+          >{client.phoneFormatted}</a
+        >
+      </li>
+      <li class="cs-nav-li">
+        <a
+          class="cs-nav-link"
+          href={`mailto:${client.email}`}
+          >{client.email}</a
+        >
+      </li>
+    </ul>
+    <ul class="cs-nav">
+      <li class="cs-nav-li">
+        <span class="cs-header">Liens</span>
+      </li>
+      
+      <li class="cs-nav-li">
+        <a
+          class="cs-nav-link"
+          href="/mentionslegales"
+          >Mentions légales</a
+        >
+      </li>
+       <li class="cs-nav-li">
+        <a
+          class="cs-nav-link"
+          href="/reviews"
+          >Avis clients</a
+        >
+      </li>
+    </ul>
+    <!-- Contact Info -->
+    <ul class="cs-nav">
+      <li class="cs-nav-li">
+        <span class="cs-header">Mes réseaux</span>
+      </li>
       <div class="cs-social">
-        <a
-          class="cs-social-link"
-          aria-label="visit google profile"
-          href=""
-        >
-          <img
-            class="cs-social-img"
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/Social/google.svg"
-            alt="google"
-            width="11"
-            height="11"
-          />
-        </a>
-        <a
-          class="cs-social-link"
-          aria-label="visit facebook profile"
-          href=""
-        >
-          <img
-            class="cs-social-img"
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/Social/Facebook.svg"
-            alt="facebook"
-            width="6"
-            height="11"
-          />
-        </a>
+       
         <a
           class="cs-social-link"
           aria-label="visit instagram profile"
-          href=""
+          href="https://instagram.com/margo.massage_"
         >
           <img
             class="cs-social-img"
@@ -75,46 +91,6 @@ import WavesUp from './WavesUp.astro';
           />
         </a>
       </div>
-    </div>
-    <!-- Links -->
-    <ul class="cs-nav">
-      <li class="cs-nav-li">
-        <span class="cs-header">Contact</span>
-      </li>
-      <li class="cs-nav-li">
-        <a
-          class="cs-nav-link"
-          href="tel:123-456 7890"
-          >(123) 456 7890</a
-        >
-      </li>
-      <li class="cs-nav-li">
-        <a
-          class="cs-nav-link"
-          href="mailto:info@codestitch.com"
-          >info@codestitch.com</a
-        >
-      </li>
-    </ul>
-    <ul class="cs-nav">
-      <li class="cs-nav-li">
-        <span class="cs-header">Liens</span>
-      </li>
-      <li class="cs-nav-li">
-        <a
-          class="cs-nav-link"
-          href=""
-          >CGV<br /> LIEN2</a
-        >
-      </li>
-    </ul>
-    <!-- Contact Info -->
-    <ul class="cs-nav">
-      <li class="cs-nav-li">
-        <span class="cs-header">Opening Hours</span>
-      </li>
-      <li class="cs-nav-li">Tuesday, Thursday, Friday: 9am-6pm</li>
-      <li class="cs-nav-li">​(closed for lunch 12pm-2pm)</li>
     </ul>
   </div>
 </footer>
@@ -272,7 +248,7 @@ import WavesUp from './WavesUp.astro';
       flex-direction: column;
     }
     #cs-footer-274 .cs-logo-img {
-      margin-bottom: 2.75rem;
+      /* margin-bottom: 2.75rem; REMOVED FOR EQUILIBRATE PADDING TOP BOTTOM BECAUSE SOCIAL NETWORK SWITCHED FROM LOGO TO SEPARE SECTION */
     }
     #cs-footer-274 .cs-nav {
       margin-top: 0.75rem;
@@ -297,7 +273,7 @@ import WavesUp from './WavesUp.astro';
     }
     body.dark-mode #cs-footer-274 .cs-logo {
       /* turns it white */
-      filter: grayscale(1) brightness(1000%);
+      filter: invert(1) brightness(1000%);
     }
     body.dark-mode #cs-footer-274 .cs-copyright {
       color: #b4b2c7;

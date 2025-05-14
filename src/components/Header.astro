@@ -5,100 +5,92 @@ import DarkModeToggle from './DarkModeToggle.astro';
 
 ---
 
-<!-- ============================================ --><!--                 Navigation                   --><!-- ============================================ -->
+<!-- ============================================ -->
+<!--                 Navigation                   -->
+<!-- ============================================ -->
+
 <header id="cs-navigation">
   <div class="cs-container">
-    <!--Nav Logo-->
-    <a
-      href="/"
-      class="cs-logo"
-      aria-label="back to home"
-    >
-    <img src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Flogo-black.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
-  
-    </a>
-    <!--Navigation List-->
-    <nav
-      class="cs-nav"
-      role="navigation"
-    >
-      <!--Mobile Nav Toggle-->
-      <button
-        class="cs-toggle"
-        aria-label="mobile menu toggle"
-      >
-        <div
-          class="cs-box"
-          aria-hidden="true"
-        >
-          <span
-            class="cs-line cs-line1"
-            aria-hidden="true"
-          ></span>
-          <span
-            class="cs-line cs-line2"
-            aria-hidden="true"
-          ></span>
-          <span
-            class="cs-line cs-line3"
-            aria-hidden="true"
-          ></span>
-        </div>
-      </button>
-      <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-      <div class="cs-ul-wrapper">
-        <ul
-          id="cs-expanded"
-          class="cs-ul cu-font-nexa cu-font-w-900"
-          aria-expanded="false"
-        >
-          
-          <li class="cs-li">
-            <a
-              href="/"
-              class="cs-li-link"
-            >
-              Accueil
-            </a>
-          </li>
-          <li class="cs-li" id="gotoaboutme">
-            <a
-              href="#"
-              class="cs-li-link"
-            >
-              A propos de moi
-            </a>
-          </li>
-          <li class="cs-li" id="gotoprestations">
-            <a
-              href="#"
-              class="cs-li-link"
-            >
-              Prestations
-            </a>
-          </li>
-          <li class="cs-li" id="gototarifs">
-            <a href="/tarifs" class="cs-li-link">Tarifs</a>
-          </li>
-          <li class="cs-li">
-            <a
-              href="/contact"
-              class="cs-li-link"
-            >
-              Contact
-            </a>
-          </li>
+      <!--Nav Logo-->
+      <a href="/" class="cs-logo" aria-label="back to home">
+          <img src="/src/assets/images/icons/margomassage-cropped.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+      </a>
+      <!--Navigation List-->
+      <nav class="cs-nav" role="navigation">
+          <!--Mobile Nav Toggle-->
+          <button class="cs-toggle" aria-label="mobile menu toggle">
+              <div class="cs-box" aria-hidden="true">
+                  <span class="cs-line cs-line1" aria-hidden="true"></span>
+                  <span class="cs-line cs-line2" aria-hidden="true"></span>
+                  <span class="cs-line cs-line3" aria-hidden="true"></span>
+              </div>
+          </button>
+          <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
+          <div class="cs-ul-wrapper">
+              <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+                  <li class="cs-li">
+                      <a href="/" class="cs-li-link cs-active">
+                          Accueil
+                      </a>
+                  </li>
+                  <li class="cs-li">
+                      <a href="/about" class="cs-li-link">
+                          A propos de moi
+                      </a>
+                  </li>
+                 
+                  
+                  <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
+                  <li class="cs-li cs-dropdown" tabindex="0">
+                      <span class="cs-li-link">
+                          Prestations
+                          <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                      </span>
+                      <ul class="cs-drop-ul">
+                          <li class="cs-drop-li">
+                              <a href="/particuliers" class="cs-li-link cs-drop-link">Pour les particuliers</a>
+                          </li>
+                          <li class="cs-drop-li">
+                              <a href="/entreprises" class="cs-li-link cs-drop-link">Pour les entreprises</a>
+                          </li>
+                        
+                      </ul>
+                  </li>
 
-        
-        </ul>
-      </div>
-      
-    </nav>
-    <a
-      href=""
-      class="cs-button-solid cs-nav-button cu-font-nexa"
-      >Réservez</a
-    >
+                  <li class="cs-li cs-dropdown" tabindex="0">
+                    <a href="/massages" class="cs-li-link">
+                        Massages
+                        <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
+                    </span>
+                    <ul class="cs-drop-ul">
+                        <li class="cs-drop-li">
+                            <a href="/californien" class="cs-li-link cs-drop-link">Californien</a>
+                        </li>
+                        <li class="cs-drop-li">
+                            <a href="/suedois" class="cs-li-link cs-drop-link">Suédois</a>
+                        </li>
+                        <li class="cs-drop-li">
+                          <a href="/amma" class="cs-li-link cs-drop-link">Amma</a>
+                      </li>
+                      <li class="cs-drop-li">
+                        <a href="/personnalise" class="cs-li-link cs-drop-link">Personnalisé</a>
+                    </li>
+                      
+                    </ul>
+                </li>
+
+
+                  <li class="cs-li">
+                    <a href="/tarifs" class="cs-li-link">
+                        Tarifs
+                    </a>
+                </li>
+
+                 
+              </ul>
+          </div>
+      </nav>
+      <a href="/contact" class="cs-button-solid cs-nav-button">Prendre rendez-vous</a>
     <DarkModeToggle></DarkModeToggle>
   </div>
 </header>
@@ -326,7 +318,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
     justify-content: flex-start;
     align-items: center;
     gap: 1.25rem;
-    overflow: scroll;
+    overflow: auto;
   }
   #cs-navigation .cs-li {
     text-align: center;
@@ -413,7 +405,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
   }
   body.dark-mode #cs-navigation .cs-logo {
     /* makes it white */
-    filter: grayscale(1) brightness(1000%);
+    filter: invert(1) brightness(1000%);
   }
   body.dark-mode #cs-navigation .cs-line {
     background-color: #fff;
@@ -423,6 +415,184 @@ import DarkModeToggle from './DarkModeToggle.astro';
   }
   body.dark-mode #cs-navigation .cs-li-link {
     color: var(--bodyTextColorWhite);
+  }
+}
+/*-- -------------------------- -->
+<---     Navigation Dropdown    -->
+<--- -------------------------- -*/
+/* Mobile - 1023px */
+@media only screen and (max-width: 63.9375rem) {
+  #cs-navigation .cs-li {
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+  #cs-navigation .cs-dropdown {
+    color: var(--bodyTextColorWhite);
+    position: relative;
+  }
+  #cs-navigation .cs-dropdown.cs-active .cs-drop-ul {
+    height: auto;
+    margin: 0.75rem 0 0 0;
+    padding: 0.75rem 0;
+    opacity: 1;
+    visibility: visible;
+  }
+  #cs-navigation .cs-dropdown.cs-active .cs-drop-link {
+    opacity: 1;
+  }
+  #cs-navigation .cs-dropdown .cs-li-link {
+    position: relative;
+    transition: opacity 0.3s;
+  }
+  #cs-navigation .cs-drop-icon {
+    width: 0.9375rem;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    right: -1.25rem;
+    transform: translateY(-50%);
+  }
+  #cs-navigation .cs-drop-ul {
+    width: 100%;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary);
+    opacity: 0;
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.75rem;
+    overflow: hidden;
+    transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, visibility 0.3s;
+  }
+  #cs-navigation .cs-drop-li {
+    list-style: none;
+  }
+  #cs-navigation .cs-li-link.cs-drop-link {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    color: #fff;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #cs-navigation .cs-dropdown {
+    position: relative;
+  }
+  #cs-navigation .cs-dropdown:hover,
+  #cs-navigation .cs-dropdown:focus-within {
+    cursor: pointer;
+  }
+  #cs-navigation .cs-dropdown:hover .cs-drop-ul,
+  #cs-navigation .cs-dropdown:focus-within .cs-drop-ul {
+    opacity: 1;
+    visibility: visible;
+    transform: scaleY(1);
+  }
+  #cs-navigation .cs-dropdown:hover .cs-drop-li,
+  #cs-navigation .cs-dropdown:focus-within .cs-drop-li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  #cs-navigation .cs-drop-icon {
+    width: 0.9375rem;
+    height: auto;
+    display: inline-block;
+  }
+  #cs-navigation .cs-drop-ul {
+    min-width: 12.5rem;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
+    opacity: 0;
+    border-bottom: 5px solid var(--primary);
+    visibility: hidden;
+    /* if you have 8 or more links in your dropdown nav, uncomment the columns property to make the list into 2 even columns. Change it to 3 or 4 if you need extra columns. Then remove the transition delays on the cs-drop-li so they don't have weird scattered animations */
+    position: absolute;
+    top: 100%;
+    z-index: -100;
+    overflow: hidden;
+    transform: scaleY(0);
+    transition: transform 0.3s, visibility 0.3s, opacity 0.3s;
+    transform-origin: top;
+  }
+  #cs-navigation .cs-drop-li {
+    font-size: 1rem;
+    text-decoration: none;
+    list-style: none;
+    width: 100%;
+    height: auto;
+    color: var(--bodyTextColor);
+    opacity: 0;
+    display: block;
+    transform: translateY(-0.625rem);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  #cs-navigation .cs-drop-li:nth-of-type(1) {
+    transition-delay: 0.05s;
+  }
+  #cs-navigation .cs-drop-li:nth-of-type(2) {
+    transition-delay: 0.1s;
+  }
+  #cs-navigation .cs-drop-li:nth-of-type(3) {
+    transition-delay: 0.15s;
+  }
+  #cs-navigation .cs-drop-li:nth-of-type(4) {
+    transition-delay: 0.2s;
+  }
+  #cs-navigation .cs-drop-li:nth-of-type(5) {
+    transition-delay: 0.25s;
+  }
+  #cs-navigation .cs-drop-li:nth-of-type(6) {
+    transition-delay: 0.3s;
+  }
+  #cs-navigation .cs-drop-li:nth-of-type(7) {
+    transition-delay: 0.35s;
+  }
+  #cs-navigation .cs-drop-li:nth-of-type(8) {
+    transition-delay: 0.4s;
+  }
+  #cs-navigation .cs-drop-li:nth-of-type(9) {
+    transition-delay: 0.45s;
+  }
+  #cs-navigation .cs-li-link.cs-drop-link {
+    font-size: 1rem;
+    line-height: 1.5em;
+    text-decoration: none;
+    white-space: nowrap;
+    width: 100%;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    padding: 0.75rem;
+    color: var(--bodyTextColor);
+    display: block;
+    transition: color 0.3s, background-color 0.3s;
+  }
+  #cs-navigation .cs-li-link.cs-drop-link:hover,
+  #cs-navigation .cs-li-link.cs-drop-link:focus {
+    background-color: #f7f7f7;
+    outline: none;
+  }
+  #cs-navigation .cs-li-link.cs-drop-link:before {
+    display: none;
+  }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #cs-navigation .cs-drop-ul {
+    background-color: var(--dark);
+  }
+  body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:hover {
+    background-color: var(--medium);
+  }
+  body.dark-mode #cs-navigation .cs-drop-icon {
+    /* turns it white */
+    filter: grayscale(1) brightness(1000%);
   }
 }
 /*-- -------------------------- -->
@@ -558,7 +728,7 @@ import DarkModeToggle from './DarkModeToggle.astro';
   }
   body.dark-mode #cs-navigation .cs-logo {
     /* makes it turn white */
-    filter: grayscale(1) brightness(1000%);
+    filter: invert(1) brightness(1000%);
   }
   body.dark-mode #cs-navigation .cs-li-link {
     color: var(--bodyTextColorWhite);
@@ -568,95 +738,62 @@ import DarkModeToggle from './DarkModeToggle.astro';
   }
 }
                                 
+                                
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const CSbody = document.querySelector("body");
-    const CSnavbarMenu = document.getElementById("cs-navigation");
-    const mobileMenuToggle = document.querySelector(".cs-toggle");
+ // add classes for mobile navigation toggling
+ var CSbody = document.querySelector("body");
+    const CSnavbarMenu = document.querySelector("#cs-navigation");
+    const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
 
-    function toggleMenu() {
-      if (mobileMenuToggle) {
-        mobileMenuToggle.classList.toggle("cs-active");
-      }
-      if (CSnavbarMenu) {
-        CSnavbarMenu.classList.toggle("cs-active");
-      }
-      if (CSbody){
-        CSbody.classList.toggle("cs-open");
-      }
-      
+    if (CShamburgerMenu) {
+        CShamburgerMenu.addEventListener('click', function() {
+            CShamburgerMenu.classList.toggle("cs-active");
+            if (CSnavbarMenu) {
+                CSnavbarMenu.classList.toggle("cs-active");
+            }
+            if (CSbody) {
+                CSbody.classList.toggle("cs-open");
+            }
+            // run the function to check the aria-expanded value
+            ariaExpanded();
+        });
     }
 
-    // Checks the value of aria expanded on an element and changes it accordingly whether it is expanded or not
-    function ariaExpanded(element) {
-      const isExpanded = element.getAttribute("aria-expanded");
-      element.setAttribute(
-        "aria-expanded",
-        isExpanded === "false" ? "true" : "false",
-      );
+    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not 
+    function ariaExpanded() {
+        const csUL = document.querySelector('#cs-expanded');
+        const csExpanded = csUL.getAttribute('aria-expanded');
+
+        if (csExpanded === 'false') {
+            csUL.setAttribute('aria-expanded', 'true');
+        } else {
+            csUL.setAttribute('aria-expanded', 'false');
+        }
     }
 
-    // Toggles the hamburger mobile menu
-    if (mobileMenuToggle) {
-      mobileMenuToggle.addEventListener("click", function () {
-        toggleMenu();
-        ariaExpanded(mobileMenuToggle);
-      });
-    }
+    // mobile nav toggle code
+    const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
+        for (const item of dropDowns) {
+            const onClick = () => {
+            item.classList.toggle('cs-active')
+        }
+        item.addEventListener('click', onClick)
+        }
 
-    // Add 'cs-active' class to the link that matches the current URL
-    // This cannot work with "A propos de moi" because it is not a real link
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll("#cs-navigation .cs-li-link");
     const currentUrl = window.location.pathname;
-    const navLinks = document.querySelectorAll('.cs-li-link');
-    navLinks.forEach(link => {
-      if (link.getAttribute('href') === currentUrl) {
-        link.classList.add('cs-active');
-      }
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === currentUrl) {
+            link.classList.add("cs-active");
+        } else {
+            link.classList.remove("cs-active");
+        }
     });
-  });
-
-  // When "A propos de moi" is clicked, scroll to the about me section OR go to "/" if the section is not found
-const aboutMeLink = document.getElementById("gotoaboutme");
-if (aboutMeLink) {
-  aboutMeLink.addEventListener("click", (event) => {
-    event.preventDefault(); // Empêche le comportement par défaut du lien
-    const targetElement = document.getElementById("sbs-1883");
-
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = "/";
-    }
-  });
-}
-
-const prestationsLink = document.getElementById("gotoprestations");
-if (prestationsLink) {
-  prestationsLink.addEventListener("click", (event) => {
-    event.preventDefault(); // Empêche le comportement par défaut du lien
-    const targetElement = document.getElementById("services-2198");
-
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = "/";
-    }
-  });
-
-  const tarifsLink = document.getElementById("gototarifs");
-if (tarifsLink) {
-  tarifsLink.addEventListener("click", (event) => {
-    event.preventDefault(); // Empêche le comportement par défaut du lien
-    const targetElement = document.getElementById("pricing-976");
-
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: "smooth" });
-    } else {
-      window.location.href = "/";
-    }
-  });
-}
-}
+});                       
 </script>

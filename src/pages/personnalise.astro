@@ -1,0 +1,21 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro"
+import CTA from "../components/CTA.astro"
+import CustomContent from "../components/CustomContent.astro";
+// Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
+import { getOptimizedImage } from '../js/utils';
+import landingImage from '../assets/images/pro-massage-table.jpg'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
+
+const optimizedImage = await getOptimizedImage(landingImage);
+---
+
+
+<BaseLayout
+  title="Massage Personnalisé"
+  description="Page du massage personnalisé de MargoMassage, masseuse à domicile à La Rochelle"
+  preloadedImage={optimizedImage}
+>
+  
+    <CustomContent />
+    <CTA/>
+</BaseLayout>
