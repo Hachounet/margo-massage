@@ -1,18 +1,18 @@
 [
   {
-    "key": "Home",
+    "key": "Accueil",
     "url": "/"
   },
   {
-    "key": "About Us",
-    "url": "/about/"
+    "key": "Qui suis je ?",
+    "url": "/quisuisje/"
   },
   {
-    "key": "Projects",
-    "url": "/projects/"
+    "key": "Prestations",
+    "url": "/prestations/"
   },
   {
-    "key": "Reviews",
-    "url": "/reviews/"
+    "key": "Contact",
+    "url": "/contact/"
   }
 ]
