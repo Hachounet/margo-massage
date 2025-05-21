@@ -1,7 +1,9 @@
 ---
 import BaseLayout from "..//layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
-
+import { Picture } from "astro:assets";
+import CTAImage from "../assets/images/back-massage2.jpg"
+import unknowUserIcon from "../assets/images/icons/unknow-user.svg"
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import {getOptimizedImage} from "../js/utils"
@@ -26,17 +28,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
     <div class="container">
       
       <div class="review">
-        <picture>
-          <img
-            class="profile"
-            loading="lazy"
-            decoding="async"
-            src="src/assets/images/icons/unknow-user.svg"
-            alt=""
-            width="99"
-            height="99"
-          />
-        </picture>
+        <Picture 
+        class={"profile"}
+        src={unknowUserIcon}
+        alt="unknow user profile image"
+        loading={"lazy"}
+        decoding={"async"}
+        />
+       
         <p>
           Un massage très agréable, les noeuds dans mon dos sont partis et je n'ai pas vu passé l'heure. Je recommande.
         </p>
@@ -56,17 +55,14 @@ const optimizedImage = await getOptimizedImage(landingImage)
         </div>
       </div>
       <div class="review">
-        <picture>
-          <img
-            class="profile"
-            loading="lazy"
-            decoding="async"
-            src="src/assets/images/icons/unknow-user.svg"
-            alt=""
-            width="99"
-            height="99"
-          />
-        </picture>
+          <Picture 
+              class={"profile"}
+              src={unknowUserIcon}
+              alt="unknow user profile image"
+              loading={"lazy"}
+              decoding={"async"}
+            />
+       
         <p>
             Trop cool, je n'ai plus du tout mal au dos. Je suis détendu et je me sens bien. Merci beaucoup.
         </p>

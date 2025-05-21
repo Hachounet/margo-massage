@@ -1,3 +1,12 @@
+---
+import margauxImage from '../assets/images/margaux.png';
+import brownLines from '../assets/images/particules/brown-lines-3.svg';
+import dotGroup from '../assets/images/particules/dot-group.svg';
+import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
+---
+
+
 <!-- ============================================ -->
 <!--            Side by Side Reverse              -->
 <!-- ============================================ -->
@@ -20,15 +29,36 @@
     </p>
 </div>
         <div class="cs-image-group">
-            <picture class="cs-picture">
-                <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="src/assets/images/margaux.png">
-                <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="src/assets/images/margaux.png">
-                <img loading="lazy" decoding="async" src="src/assets/images/margaux.png" alt="dermatologist" width="324" height="467">
-            </picture>
-            <img class="cs-graphic cs-brown" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/brown-lines-3.svg" alt="graphic" width="208" height="203" aria-hidden="true">
-            <img class="cs-graphic cs-dots" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/dot-group.svg" alt="graphic" width="137" height="112" aria-hidden="true">
+            <Picture
+            pictureAttributes={{
+              class: "cs-picture",
+            }}
+          src={margauxImage}
+          alt="Margaux representative picture"
+          formats={["avif", "webp", "jpg"]} 
+          loading={"eager"}
+          decoding={"auto"}/>
+            <Image
+                class="cs-graphic cs-brown"
+                src={brownLines}
+                alt="graphic"
+                width="208"
+                height="203"
+                loading="lazy"
+                decoding="async"
+                aria-hidden="true"
+                />
+            <Image
+                class="cs-graphic cs-dots"
+                src={dotGroup}
+                alt="graphic"
+                width="137"
+                height="112"
+                loading="lazy"
+                decoding="async"
+                aria-hidden="true"
+                />
+            
         </div>
     </div>
 </section>

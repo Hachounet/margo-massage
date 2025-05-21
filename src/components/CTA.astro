@@ -1,6 +1,6 @@
 ---
-import WavesUp from './WavesUp.astro';
-import Waves from './Waves.astro';
+import { Picture } from 'astro:assets';
+import backMassageImg from '../assets/images/back-massage2.jpg';
 ---
 
 <!-- ============================================ --><!--                    CTA                       --><!-- ============================================ -->
@@ -14,26 +14,17 @@ import Waves from './Waves.astro';
         >Prendre rendez-vous</a
       >
     </div>
-    
-    <picture class="cs-background">
-      <source
-        media="(max-width: 600px)"
-        srcset="src/assets/images/back-massage2.jpg"
-      />
-      <source
-        media="(min-width: 601px)"
-        srcset="src/assets/images/back-massage2.jpg"
-      />
-      <img
-        aria-hidden="true"
-        loading="lazy"
-        decoding="async"
-        src="src/assets/images/back-massage2.jpg"
-        alt="appliance"
-        width="275"
-        height="132"
-      />
-    </picture>
+    <Picture
+    pictureAttributes={{
+      class:"cs-background"
+    }}
+    src={backMassageImg}
+    alt="appliance"
+    formats={["avif", "webp", "jpg"]}
+    loading={"lazy"}
+    decoding={"async"}
+    aria-hidden="true" />
+  
   </div>
 </section>
 

@@ -1,37 +1,41 @@
 [
   {
     "name": "Californien",
+    "altImgDescription": "Californian massage image",
     "pricedescription": "Enveloppant, fluide et apaisant : un moment de douceur pour relâcher les tensions physiques et émotionnelles en profondeur.",
-    "image": "https://as1.ftcdn.net/v2/jpg/07/09/24/30/1000_F_709243020_qLsqkZU3e72KXXdiYKWiqbLKyvIM4guT.jpg",
-    "icon": "src/assets/images/icons/massage-svgrepo-com(1).svg",
+    "image": "massage-californian.jpg",
+    "icon": "massage-svgrepo-com(1).svg",
     "text": "Plongez dans une relaxation profonde avec le massage californien. Ses mouvements longs, fluides et enveloppants libèrent le stress et procurent une sensation d’harmonie totale. Idéal pour apaiser le corps et l’esprit.",
     "price": "1h 60€ / 1h30 85€",
     "link": "/californien"
   },
   {
     "name": "Suédois",
+    "altImgDescription": "Swedish massage image",
     "pricedescription": "Tonique et profond, ce massage cible les tensions musculaires pour un soulagement durable et une sensation de légèreté retrouvée.",
-    "image": "https://img.freepik.com/photos-gratuite/homme-angle-eleve-se-fait-masser_23-2150649759.jpg?t=st=1732179807~exp=1732183407~hmac=b297beec0a6e93d3e6e3f6e6052a75bd8ddeb33595ca3baf09151f3a9e95ce1c&w=1060",
-    "icon": "src/assets/images/icons/massage-svgrepo-com.svg",
+    "image": "massage-swedish.avif",
+    "icon": "massage-svgrepo-com.svg",
     "text": "Un soin tonique et relaxant qui soulage les tensions musculaires, stimule la circulation et apaise l’esprit. Idéal pour la récupération sportive et le bien-être général. Un moment de détente et de vitalité pour un équilibre parfait.",
     "price": "1h 60€ / 1h30 85€",
     "link": "/suedois"
   },
   {
     "name": "Amma",
+    "altImgDescription": "Amma massage image",
     "pricedescription": "Idéal pour une pause express : assis, habillé, ce massage dynamique relâche les tensions et redonne de l’énergie en quelques minutes.",
-    "image": "https://img.freepik.com/photos-gratuite/masseuse-moyenne-client_23-2148531217.jpg?t=st=1732179980~exp=1732183580~hmac=2d69782234b04eb15017ca9fe1e1db559b2e6c92dae93f26df307185915be592&w=740",
-    "icon": "src/assets/images/icons/lotus-svgrepo-com.svg",
+    "image": "massage-amma.avif",
+    "icon": "lotus-svgrepo-com.svg",
     "text": "Énergisant et relaxant, le massage Amma est une technique japonaise basée sur l’acupression. En quelques minutes, il soulage les tensions, stimule la vitalité et recentre l’énergie. Parfait pour une pause bien-être rapide et efficace.",
     "price": "1h 60€ / 1h30 85€",
     "link": "/amma"
   },
   {
     "name": "Personnalisé",
+    "altImgDescription": "Custom massage image",
     "pricedescription": "Une séance 100 % sur-mesure, pensée selon vos envies et besoins : détente, tonus, ciblage des douleurs… vous choisissez.",
-    "image": "https://img.freepik.com/photos-gratuite/therapie-gros-plan-pierres-chaudes_23-2148531222.jpg?t=st=1732180030~exp=1732183630~hmac=a985537fb720300d3d40d39ac36c84ae282de6b9146047b2442299a8ef972dc4&w=740",
-    "icon": "src/assets/images/icons/stones-svgrepo-com(1).svg",
-    "text": "Offrez-vous un massage sur-mesure, adapté à vos besoins et à vos envies. Relaxant, tonique ou thérapeutique, chaque séance est unique pour une expérience de bien-être optimale directement à domicile. ",
+    "image": "massage-custom.avif",
+    "icon": "stones-svgrepo-com(1).svg",
+    "text": "Offrez-vous un massage sur-mesure, adapté à vos besoins et à vos envies. Relaxant, tonique ou thérapeutique, chaque séance est unique pour une expérience de bien-être optimale directement à domicile.",
     "price": "1h 60€ / 1h30 85€",
     "link": "/personnalise"
   }

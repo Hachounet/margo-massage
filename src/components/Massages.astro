@@ -1,5 +1,30 @@
 ---
 import massages from '../data/massages.json';
+import { Picture } from 'astro:assets';
+
+import massageCalifornian from "../assets/images/massage-californian.jpg";
+import massageAmma from "../assets/images/massage-amma.avif";
+import massageCustom from "../assets/images/massage-custom.avif";
+import massageSwedish from "../assets/images/massage-custom.avif";
+
+import lotusIcon from "../assets/images/icons/lotus-svgrepo-com.svg";
+import stonesIcon from "../assets/images/icons/stones-svgrepo-com(1).svg"
+import massageIcon from "../assets/images/icons/massage-svgrepo-com.svg";
+import massageIcon2 from "../assets/images/icons/massage-svgrepo-com(1).svg"
+
+const localImages = {
+  'massage-californian.jpg': massageCalifornian,
+  'massage-amma.avif': massageAmma,
+  'massage-custom.avif': massageCustom,
+  'massage-swedish.avif': massageSwedish,
+}
+
+const localIcons = {
+  'lotus-svgrepo-com.svg': lotusIcon,
+  'stones-svgrepo-com(1).svg': stonesIcon,
+  'massage-svgrepo-com.svg': massageIcon,
+  'massage-svgrepo-com(1).svg': massageIcon2,
+}
 ---
 
 <!-- ============================================ --><!--                  Services                    --><!-- ============================================ -->
@@ -16,21 +41,23 @@ import massages from '../data/massages.json';
     <ul class="cs-card-group">
       {
         massages.map((item) => {
+          let imageSrc = localImages[item.image];
+          let iconSrc = localIcons[item.icon];
           return (
             <li class="cs-item">
               <div class="cs-box">
-                <picture class="cs-wrapper">
-                  <img
-                    class="cs-icon"
-                    aria-hidden="true"
-                    loading="lazy"
-                    decoding="async"
-                    src={item.icon}
-                    alt="icon"
-                    width="70"
-                    height="70"
-                  />
-                </picture>
+                <Picture 
+                pictureAttributes={{
+                  class: "cs-wrapper",
+                }}
+                class={"cs-icon"}
+                src={iconSrc}
+                alt={"icon"}
+                loading={"lazy"}
+                decoding={"async"}
+                aria-hidden="true"
+                />
+               
                 <h3 class="cs-h3">{item.name}</h3>
                 <p class="cs-item-text cu-font-nexa">{item.text}</p>
                 <a
@@ -40,17 +67,19 @@ import massages from '../data/massages.json';
                   En savoir plus
                 </a>
               </div>
-              <picture class="cs-picture">
-                <img
-                  aria-hidden="true"
-                  loading="lazy"
-                  decoding="async"
-                  src={item.image}
-                  alt="leaf"
-                  width="345"
-                  height="428"
-                />
-              </picture>
+
+              <Picture
+              pictureAttributes={{
+                class: "cs-picture",
+              }}
+              src={imageSrc}
+              alt={item.altImgDescription}
+              formats={["avif", "webp", "jpeg"]}
+              loading={"lazy"}
+              decoding={"async"}
+              aria-hidden="true" />
+
+              
             </li>
           );
         })

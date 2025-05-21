@@ -1,3 +1,14 @@
+---
+import { Picture } from 'astro:assets';
+import proMassageTable from '../assets/images/pro-massage-table.jpg';
+import particuleTwirl from '../assets/images/particules/twirl.svg';
+import particuleHeroPeachBlob from '../assets/images/particules/hero-peach-blob.svg';
+import particuleBeigeBlob from '../assets/images/particules/beige-blob-2.svg';
+import particuleDermBigLeaf from '../assets/images/particules/derm-big-leaf.svg';
+---
+
+
+
 <!-- ============================================ -->
 <!--                 Content Page                 -->
 <!-- ============================================ -->
@@ -33,17 +44,46 @@
         </p>
     </div>
             <div class="cs-image-group">
-                <picture class="cs-picture">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="src/assets/images/pro-massage-table.jpg">
-                    <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="src/assets/images/pro-massage-table.jpg">
-                    <img loading="lazy" decoding="async" src="src/assets/images/pro-massage-table.jpg" alt="office" width="522" height="680">
-                </picture>
-                <img class="cs-graphic cs-twirl" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/twirl.svg" alt="graphic" width="177" height="97" aria-hidden="true">
-                <img class="cs-graphic cs-peach" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/hero-peach-blob.svg" alt="graphic" width="86" height="65" aria-hidden="true">
-                <img class="cs-graphic cs-blob" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/beige-blob-2.svg" alt="graphic" width="528" height="468" aria-hidden="true">
-                <img class="cs-graphic cs-leaf" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/derm-big-leaf.svg" alt="graphic" width="175" height="143" aria-hidden="true">
+                 <Picture
+              pictureAttributes={{
+                class: "cs-picture",
+              }}
+              src={proMassageTable}
+              alt={"Massage table in a professionnal environment"}
+              formats={["avif", "webp", "jpg"]}
+              loading={"lazy"}
+              decoding={"async"}
+               />
+
+               <Picture 
+               class={"cs-graphic cs-twirl"}
+               src={particuleTwirl}
+               alt="graphic"
+               loading={"lazy"}
+               decoding={"async"}
+               aria-hidden="true" />
+               <Picture
+               src={particuleHeroPeachBlob}
+               class="cs-graphic cs-peach"
+               alt="graphic"
+               loading={"lazy"}
+               decoding={"async"}
+               aria-hidden="true" />
+               <Picture
+               src={particuleBeigeBlob}
+               class="cs-graphic cs-blob"
+               alt="graphic"
+               loading={"lazy"}
+               decoding={"async"}
+               aria-hidden="true" />
+               <Picture
+               src={particuleDermBigLeaf}
+               class="cs-graphic cs-leaf"
+               alt="graphic"
+               loading={"lazy"}
+               decoding={"async"}
+               aria-hidden="true" />
+               
             </div>
         </div>
     </section>

@@ -1,6 +1,8 @@
 ---
 import client from '../data/client.json';
-import WavesUp from './WavesUp.astro';
+import { Picture } from 'astro:assets';
+import margoMassageLogo from '../assets/images/icons/margomassage-cropped.svg';
+import instagramIcon from '../assets/images/icons/instagram.svg';
 ---
 
 <!-- ============================================ --><!--                   Footer                     --><!-- ============================================ -->
@@ -14,16 +16,13 @@ import WavesUp from './WavesUp.astro';
         href=""
       >
         <!-- Remove the light class if you don't need the dark logo -->
-        <img
-          class="cs-logo-img"
-          aria-hidden="true"
-          loading="lazy"
-          decoding="async"
-          src="/src/assets/images/icons/margomassage-cropped.svg"
-          alt="logo"
-          width="240"
-          height="32"
-        />
+         <Picture
+         src={margoMassageLogo}
+         alt="logo"
+         class={"cs-logo-img"}
+         loading={"lazy"}
+         decoding={"async"} />
+    
       </a>
     
     </div>
@@ -79,16 +78,13 @@ import WavesUp from './WavesUp.astro';
           aria-label="visit instagram profile"
           href="https://instagram.com/margo.massage_"
         >
-          <img
-            class="cs-social-img"
-            aria-hidden="true"
-            loading="lazy"
-            decoding="async"
-            src="https://csimg.nyc3.digitaloceanspaces.com/Social/instagram.svg"
-            alt="instagram"
-            width="11"
-            height="11"
-          />
+        <Picture
+        src={instagramIcon}
+        alt="instagram"
+        class={"cs-social-img"}
+        loading={"lazy"}
+        decoding={"async"} />
+         
         </a>
       </div>
     </ul>

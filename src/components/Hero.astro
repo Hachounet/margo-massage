@@ -1,81 +1,54 @@
 ---
-
+import { Image } from "astro:assets";
+import margauxImage from "../assets/images/margaux.png";
+import brownLines from "../assets/images/particules/brown-lines-2.svg";
+import ball from "../assets/images/particules/ball.svg";
+import beigeBlob from "../assets/images/particules/beige-blob.svg";
+import leaf from "../assets/images/particules/leaf2.svg";
+import beigeLines from "../assets/images/particules/beige-lines.svg";
 ---
 
 <!-- ============================================ --><!--                Side by Side                  --><!-- ============================================ -->
 <section id="sbs-1883">
   <div class="cs-container">
     <div class="cs-image-group">
-      <picture class="cs-picture">
-        <!--Mobile Image-->
-        <source
-          media="(max-width: 600px)"
-          srcset="src/assets/images/margaux.png"
-        />
-        <!--Tablet and above Image-->
-        <source
-          media="(min-width: 601px)"
-          srcset="src/assets/images/margaux.png"
-        />
-        <img
-          loading="lazy"
-          decoding="async"
-          src="src/assets/images/margaux.png"
-          alt="MargoMassage - Masseuse professionnelle à La Rochelle"
-          width="324"
-          height="467"
-        />
-      </picture>
-      <img
-        class="cs-graphic cs-brown"
-        loading="lazy"
-        decoding="async"
-        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/brown-lines-2.svg"
-        alt="graphic"
-        width="208"
-        height="203"
-        aria-hidden="true"
-      />
-      <img
-        class="cs-graphic cs-peach"
-        loading="lazy"
-        decoding="async"
-        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/ball.svg"
-        alt="graphic"
-        width="56"
-        height="42"
-        aria-hidden="true"
-      />
-      <img
-        class="cs-graphic cs-beige"
-        loading="lazy"
-        decoding="async"
-        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/beige-blob.svg"
-        alt="graphic"
-        width="379"
-        height="394"
-        aria-hidden="true"
-      />
-      <img
-        class="cs-graphic cs-leaf"
-        loading="lazy"
-        decoding="async"
-        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/leaf2.svg"
-        alt="graphic"
-        width="179"
-        height="225"
-        aria-hidden="true"
-      />
-      <img
-        class="cs-graphic cs-lines"
-        loading="lazy"
-        decoding="async"
-        src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/beige-lines.svg"
-        alt="graphic"
-        width="189"
-        height="208"
-        aria-hidden="true"
-      />
+      <Image src={margauxImage} alt="Photo représentant Margaux de MargoMassage" class={"cs-picture"} />
+      <Image
+      src={brownLines}
+      alt="graphic"
+      class={"cs-graphic cs-brown"}
+      loading={"lazy"}
+      decoding={"async"}
+      aria-hidden="true" />
+      <Image
+      src={ball}
+      alt="graphic"
+      class={"cs-graphic cs-peach"}
+      loading={"lazy"}
+      decoding={"async"}
+      aria-hidden="true" />
+   <Image
+      src={beigeBlob}
+      alt="graphic"
+      class={"cs-graphic cs-beige"}
+      loading={"lazy"}
+      decoding={"async"}
+      aria-hidden="true" />
+     <Image
+      src={leaf}
+      alt="graphic"
+      class={"cs-graphic cs-leaf"}
+      loading={"lazy"}
+      decoding={"async"}
+      aria-hidden="true" />
+     <Image
+      src={beigeLines}
+      alt="graphic"
+      class={"cs-graphic cs-lines"}
+      loading={"lazy"}
+      decoding={"async"}
+      aria-hidden="true" />
+     
       <div class="cs-info">
         <p class="cs-info-text">
           <span class="cs-bold cu-font-nexa">Diplômée</span>

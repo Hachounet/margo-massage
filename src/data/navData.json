@@ -4,15 +4,47 @@
     "url": "/"
   },
   {
-    "key": "Qui suis je ?",
-    "url": "/quisuisje/"
+    "key": "A propos de moi",
+    "url": "/about/"
   },
   {
     "key": "Prestations",
-    "url": "/prestations/"
+    
+    "children": [
+      {
+        "key": "Particuliers",
+        "url": "/particuliers"
+      }, 
+      {
+        "key": "Entreprises",
+        "url": "/entreprises"
+      }
+    ]
   },
   {
-    "key": "Contact",
-    "url": "/contact/"
+    "key": "Massages",
+    
+    "children": [
+      {
+        "key": "Californien",
+        "url": "/californien/"
+      },
+      {
+        "key": "Suédois",
+        "url": "/suedois/"
+      },
+      {
+        "key": "Amma",
+        "url": "/amma/"
+      },
+      {
+        "key": "Personnalisé",
+        "url": "/personnalise/"
+      }
+    ]
+  },
+  {
+    "key": "Tarifs",
+    "url": "/tarifs/"
   }
 ]

@@ -5,6 +5,7 @@ import Footer from "../components/Footer.astro";
 import "../styles/root.less";
 import "../styles/dark.less";
 
+
 // Receiving and destructuring props from the .astro pages
 const { description, title, preloadedImage } = Astro.props;
 ---
@@ -73,7 +74,9 @@ const { description, title, preloadedImage } = Astro.props;
     <Header />
     <main id="main">
       <slot />
+      
     </main>
+    
     <Footer />
   </body>
 </html>

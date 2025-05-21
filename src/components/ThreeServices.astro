@@ -1,5 +1,9 @@
 ---
-
+import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
+import person1Image from '../assets/images/person1.avif';
+import person2Image from '../assets/images/person2.avif';
+import person3Image from '../assets/images/person3.avif';
 ---
 
 <!-- ============================================ --><!--                  Services                    --><!-- ============================================ -->
@@ -16,29 +20,22 @@
           href="/particuliers"
           class="cs-link"
         >
-          <picture
-            class="cs-picture"
-            style="clip-path: circle(44.3% at 50% 50%);"
-          >
-            <!--Mobile Image-->
-            <source
-              media="(max-width: 600px)"
-              srcset="https://img.freepik.com/photos-gratuite/tendre-femme-africaine-souriante-beneficiant-massage-yeux-fermes-dans-station-thermale_176420-12929.jpg?t=st=1732177731~exp=1732181331~hmac=bd4ebd79b6b8e0ba5d92ca6c06b7c4818aa63b4f6392d9a071e563ca7cea70a7&w=1060"
-            />
-            <!--Tablet and above Image-->
-            <source
-              media="(min-width: 601px)"
-              srcset="https://img.freepik.com/photos-gratuite/tendre-femme-africaine-souriante-beneficiant-massage-yeux-fermes-dans-station-thermale_176420-12929.jpg?t=st=1732177731~exp=1732181331~hmac=bd4ebd79b6b8e0ba5d92ca6c06b7c4818aa63b4f6392d9a071e563ca7cea70a7&w=1060"
-            />
-            <img
-              loading="lazy"
-              decoding="async"
-              src="https://img.freepik.com/photos-gratuite/tendre-femme-africaine-souriante-beneficiant-massage-yeux-fermes-dans-station-thermale_176420-12929.jpg?t=st=1732177731~exp=1732181331~hmac=bd4ebd79b6b8e0ba5d92ca6c06b7c4818aa63b4f6392d9a071e563ca7cea70a7&w=1060"
-              alt="wedding photography"
-              width="413"
-              height="340"
-            />
-          </picture>
+         <Picture
+            pictureAttributes={{
+                class: "cs-picture",
+              
+                
+                
+            }}
+            formats={["avif", "webp", "jpg"]}
+            src={person1Image}
+            alt={"person 1 getting massaged"}
+            loading="lazy"
+            decoding="async"
+            
+        />
+          
+         
           <div class="cs-flex">
             <h3 class="cs-h3">A domicile</h3>
             <span class="cs-number">01</span>
@@ -53,26 +50,20 @@
           href="/entreprises"
           class="cs-link"
         >
-          <picture class="cs-picture" style="clip-path: circle(44.3% at 50% 50%);">
-            <!--Mobile Image-->
-            <source
-              media="(max-width: 600px)"
-              srcset="https://img.freepik.com/photos-gratuite/jeune-femme-se-detendre-dans-salon-spa_176420-7578.jpg?t=st=1732177804~exp=1732181404~hmac=9557a76f589c3fa67d8b8c666caa99eeb89452789f02e653ac2f61476fa41543&w=1060"
-            />
-            <!--Tablet and above Image-->
-            <source
-              media="(min-width: 601px)"
-              srcset="https://img.freepik.com/photos-gratuite/jeune-femme-se-detendre-dans-salon-spa_176420-7578.jpg?t=st=1732177804~exp=1732181404~hmac=9557a76f589c3fa67d8b8c666caa99eeb89452789f02e653ac2f61476fa41543&w=1060"
-            />
-            <img
-              loading="lazy"
-              decoding="async"
-              src="https://img.freepik.com/photos-gratuite/jeune-femme-se-detendre-dans-salon-spa_176420-7578.jpg?t=st=1732177804~exp=1732181404~hmac=9557a76f589c3fa67d8b8c666caa99eeb89452789f02e653ac2f61476fa41543&w=1060"
-              alt="wedding photography"
-              width="413"
-              height="340"
-            />
-          </picture>
+          <Picture
+            pictureAttributes={{
+                class: "cs-picture",
+               
+                
+                
+            }}
+            formats={["avif", "webp", "jpg"]}
+            src={person2Image}
+            alt={"person 2 getting massaged"}
+            loading="lazy"
+            decoding="async"
+            
+        />
           <div class="cs-flex">
             <h3 class="cs-h3">En entreprise</h3>
             <span class="cs-number">02</span>
@@ -87,26 +78,20 @@
           href="/massages"
           class="cs-link"
         >
-          <picture class="cs-picture" style="clip-path: circle(44.3% at 50% 50%);">
-            <!--Mobile Image-->
-            <source
-              media="(max-width: 600px)"
-              srcset="https://img.freepik.com/photos-gratuite/massage-quatre-mains-concept-soins-sante-beaute-feminine-deux-masseuses-font-double-massage-fille-femme-dans-salon-spa_1157-43646.jpg?t=st=1732177814~exp=1732181414~hmac=65e4697d37a5fb567eab4b574fb773842b44ac8464e4ef6519b6500744fb3cb2&w=1060"
-            />
-            <!--Tablet and above Image-->
-            <source
-              media="(min-width: 601px)"
-              srcset="https://img.freepik.com/photos-gratuite/massage-quatre-mains-concept-soins-sante-beaute-feminine-deux-masseuses-font-double-massage-fille-femme-dans-salon-spa_1157-43646.jpg?t=st=1732177814~exp=1732181414~hmac=65e4697d37a5fb567eab4b574fb773842b44ac8464e4ef6519b6500744fb3cb2&w=1060"
-            />
-            <img
-              loading="lazy"
-              decoding="async"
-              src="https://img.freepik.com/photos-gratuite/massage-quatre-mains-concept-soins-sante-beaute-feminine-deux-masseuses-font-double-massage-fille-femme-dans-salon-spa_1157-43646.jpg?t=st=1732177814~exp=1732181414~hmac=65e4697d37a5fb567eab4b574fb773842b44ac8464e4ef6519b6500744fb3cb2&w=1060"
-              alt="wedding photography"
-              width="413"
-              height="340"
-            />
-          </picture>
+         <Picture
+            pictureAttributes={{
+                class: "cs-picture",
+                
+                
+                
+            }}
+            formats={["avif", "webp", "jpg"]}
+            src={person3Image}
+            alt={"person 3 getting massaged"}
+            loading="lazy"
+            decoding="async"
+            
+        />
           <div class="cs-flex">
             <h3 class="cs-h3">Personnalisé</h3>
             <span class="cs-number">03</span>
@@ -197,6 +182,7 @@
     display: flex;
     justify-content: center;
     position: relative;
+    clip-path: circle(44.3% at 50% 50%); /* Manually added to keep the image in a circle */
   }
   #services-2198 .cs-picture::before {
     content: "";

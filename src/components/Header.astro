@@ -1,8 +1,11 @@
 ---
 
 import DarkModeToggle from './DarkModeToggle.astro';
+import { Image } from 'astro:assets';
+import margoMassageLogo from '../assets/images/icons/margomassage-cropped.svg';
+import dropdownIcon from "../assets/images/icons/Icons_dropdown.svg"
 
-
+import navData from '../data/navData.json';
 ---
 
 <!-- ============================================ -->
@@ -13,7 +16,16 @@ import DarkModeToggle from './DarkModeToggle.astro';
   <div class="cs-container">
       <!--Nav Logo-->
       <a href="/" class="cs-logo" aria-label="back to home">
-          <img src="/src/assets/images/icons/margomassage-cropped.svg" alt="logo" width="210" height="29" aria-hidden="true" decoding="async">
+          <!-- Remove the light class if you don't need the dark logo -->
+         
+          
+           <Image
+              src={margoMassageLogo}
+              alt="logo"
+              decoding={"async"}
+              aria-hidden="true"
+             
+              />
       </a>
       <!--Navigation List-->
       <nav class="cs-nav" role="navigation">
@@ -26,69 +38,67 @@ import DarkModeToggle from './DarkModeToggle.astro';
               </div>
           </button>
           <!-- We need a wrapper div so we can set a fixed height on the cs-ul in case the nav list gets too long from too many dropdowns being opened and needs to have an overflow scroll. This wrapper acts as the background so it can go the full height of the screen and not cut off any overflowing nav items while the cs-ul stops short of the bottom of the screen, which keeps all nav items in view no matter how mnay there are-->
-          <div class="cs-ul-wrapper">
-              <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
-                  <li class="cs-li">
-                      <a href="/" class="cs-li-link cs-active">
-                          Accueil
-                      </a>
-                  </li>
-                  <li class="cs-li">
-                      <a href="/about" class="cs-li-link">
-                          A propos de moi
-                      </a>
-                  </li>
-                 
-                  
-                  <!--Copy and paste this cs-dropdown list item and replace any .cs-li with this cs-dropdown group to make a new dropdown and it will work-->
-                  <li class="cs-li cs-dropdown" tabindex="0">
-                      <span class="cs-li-link">
-                          Prestations
-                          <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                      </span>
-                      <ul class="cs-drop-ul">
-                          <li class="cs-drop-li">
-                              <a href="/particuliers" class="cs-li-link cs-drop-link">Pour les particuliers</a>
-                          </li>
-                          <li class="cs-drop-li">
-                              <a href="/entreprises" class="cs-li-link cs-drop-link">Pour les entreprises</a>
-                          </li>
-                        
-                      </ul>
-                  </li>
-
-                  <li class="cs-li cs-dropdown" tabindex="0">
-                    <a href="/massages" class="cs-li-link">
-                        Massages
-                        <img class="cs-drop-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Fdown.svg" alt="dropdown icon" width="15" height="15" decoding="async" aria-hidden="true">
-                    </span>
-                    <ul class="cs-drop-ul">
-                        <li class="cs-drop-li">
-                            <a href="/californien" class="cs-li-link cs-drop-link">Californien</a>
-                        </li>
-                        <li class="cs-drop-li">
-                            <a href="/suedois" class="cs-li-link cs-drop-link">Suédois</a>
-                        </li>
-                        <li class="cs-drop-li">
-                          <a href="/amma" class="cs-li-link cs-drop-link">Amma</a>
-                      </li>
-                      <li class="cs-drop-li">
-                        <a href="/personnalise" class="cs-li-link cs-drop-link">Personnalisé</a>
-                    </li>
-                      
-                    </ul>
+        <div class="cs-ul-wrapper">
+  <ul id="cs-expanded" class="cs-ul" aria-expanded="false">
+    {
+      navData.map((entry) => (
+        <li
+          class:list={[
+            "cs-li",
+            { "cs-dropdown": Array.isArray(entry.children) && entry.children.length > 0 },
+          ]}
+          tabindex={Array.isArray(entry.children) && entry.children.length > 0 ? "0" : ""}
+        >
+          <a
+            href={entry.url}
+            class:list={[
+              "cs-li-link",
+              {
+                "cs-active":
+                  Astro.url.pathname === entry.url ||
+                  (Array.isArray(entry.children) &&
+                    entry.children.some((child) => Astro.url.pathname === child.url)),
+              },
+            ]}
+          >
+            {entry.key}
+            {Array.isArray(entry.children) && entry.children.length > 0 && (
+              <Image
+                class={"cs-drop-icon"}
+                src={dropdownIcon}
+                alt="dropdown icon"
+                decoding={"async"}
+                aria-hidden="true"
+              />
+            )}
+          </a>
+          {Array.isArray(entry.children) && entry.children.length > 0 && (
+            <ul class="cs-drop-ul">
+              {entry.children.map((child) => (
+                <li class="cs-drop-li">
+                  <a
+                    href={child.url}
+                    class:list={[
+                      "cs-li-link",
+                      "cs-drop-link",
+                      { "cs-active": Astro.url.pathname === child.url },
+                    ]}
+                  >
+                    {child.key}
+                  </a>
                 </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>
 
 
-                  <li class="cs-li">
-                    <a href="/tarifs" class="cs-li-link">
-                        Tarifs
-                    </a>
-                </li>
-
-                 
-              </ul>
-          </div>
+     
+         
       </nav>
       <a href="/contact" class="cs-button-solid cs-nav-button">Prendre rendez-vous</a>
     <DarkModeToggle></DarkModeToggle>
@@ -742,58 +752,82 @@ import DarkModeToggle from './DarkModeToggle.astro';
 </style>
 
 <script>
- // add classes for mobile navigation toggling
- var CSbody = document.querySelector("body");
-    const CSnavbarMenu = document.querySelector("#cs-navigation");
-    const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
+  // add classes for mobile navigation toggling
+  var CSbody = document.querySelector("body");
+  const CSnavbarMenu = document.querySelector("#cs-navigation");
+  const CShamburgerMenu = document.querySelector("#cs-navigation .cs-toggle");
 
-    if (CShamburgerMenu) {
-        CShamburgerMenu.addEventListener('click', function() {
-            CShamburgerMenu.classList.toggle("cs-active");
-            if (CSnavbarMenu) {
-                CSnavbarMenu.classList.toggle("cs-active");
-            }
-            if (CSbody) {
-                CSbody.classList.toggle("cs-open");
-            }
-            // run the function to check the aria-expanded value
-            ariaExpanded();
-        });
+  if (CShamburgerMenu) {
+    CShamburgerMenu.addEventListener("click", function () {
+      CShamburgerMenu.classList.toggle("cs-active");
+      if (CSnavbarMenu) {
+        CSnavbarMenu.classList.toggle("cs-active");
+      }
+      if (CSbody) {
+        CSbody.classList.toggle("cs-open");
+      }
+      // run the function to check the aria-expanded value
+      ariaExpanded();
+    });
+  }
+
+  // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not
+  function ariaExpanded() {
+    const csUL = document.querySelector("#cs-expanded");
+    if (!csUL) return;
+    const csExpanded = csUL.getAttribute("aria-expanded");
+
+    if (csExpanded === "false") {
+      csUL.setAttribute("aria-expanded", "true");
+    } else {
+      csUL.setAttribute("aria-expanded", "false");
     }
+  }
 
-    // checks the value of aria expanded on the cs-ul and changes it accordingly whether it is expanded or not 
-    function ariaExpanded() {
-        const csUL = document.querySelector('#cs-expanded');
-        const csExpanded = csUL.getAttribute('aria-expanded');
+  // mobile nav toggle code
+  const dropDowns = Array.from(document.querySelectorAll("#cs-navigation .cs-dropdown"));
+  for (const item of dropDowns) {
+    const onClick = () => {
+      item.classList.toggle("cs-active");
+    };
+    item.addEventListener("click", onClick);
+  }
 
-        if (csExpanded === 'false') {
-            csUL.setAttribute('aria-expanded', 'true');
-        } else {
-            csUL.setAttribute('aria-expanded', 'false');
-        }
-    }
-
-    // mobile nav toggle code
-    const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
-        for (const item of dropDowns) {
-            const onClick = () => {
-            item.classList.toggle('cs-active')
-        }
-        item.addEventListener('click', onClick)
-        }
-
-
-
-        document.addEventListener("DOMContentLoaded", function () {
+  // Handle active state for navigation links
+  document.addEventListener("DOMContentLoaded", function () {
     const links = document.querySelectorAll("#cs-navigation .cs-li-link");
     const currentUrl = window.location.pathname;
 
-    links.forEach(link => {
-        if (link.getAttribute("href") === currentUrl) {
-            link.classList.add("cs-active");
+    // Normalize URLs to handle trailing slashes
+    const normalizeUrl = (url) => url.replace(/\/$/, "");
+
+    links.forEach((link) => {
+      const linkUrl = normalizeUrl(link.getAttribute("href"));
+      const isActive = linkUrl === normalizeUrl(currentUrl);
+
+      // Handle child links
+      const parentDropdown = link.closest(".cs-dropdown");
+      if (parentDropdown) {
+        const childLinks = parentDropdown.querySelectorAll(".cs-drop-link");
+        const hasActiveChild = Array.from(childLinks).some(
+          (child) => normalizeUrl(child.getAttribute("href")) === normalizeUrl(currentUrl)
+        );
+
+        // If the link is a parent and has an active child, add cs-active
+        if (hasActiveChild) {
+          link.classList.add("cs-active");
         } else {
-            link.classList.remove("cs-active");
+          link.classList.remove("cs-active");
         }
+      }
+
+      // Handle the link itself (parent or non-dropdown link)
+      if (isActive) {
+        link.classList.add("cs-active");
+      } else if (!parentDropdown) {
+        // Only remove cs-active from non-dropdown links or links without active children
+        link.classList.remove("cs-active");
+      }
     });
-});                       
+  });
 </script>

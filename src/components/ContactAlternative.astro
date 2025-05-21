@@ -1,7 +1,12 @@
 ---
 
 import client from "../data/client.json";
-
+import { Picture } from "astro:assets";
+import iconPhone from "../assets/images/icons/phone-76.svg";
+import iconMail from "../assets/images/icons/mail-76.svg";
+import iconPin from "../assets/images/icons/pin-76.svg";
+import iconQuote from "../assets/images/icons/pink-quotes.svg";
+import unknowUser from "../assets/images/icons/unknow-user.svg";
 ---
 
 
@@ -23,27 +28,48 @@ import client from "../data/client.json";
             </p>
             <ul class="cs-ul">
                 <li class="cs-li">
-                    <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/phone-76.svg" alt="phone icon" class="cs-icon" width="40" height="40" decoding="async">
-                    </picture>
+                    <Picture 
+                    src={iconPhone}
+                    alt="phone icon"
+                    pictureAttributes={{
+                        class: "cs-icon-wrapper",
+                    }}
+                    class={"cs-icon"}
+                    decoding="async"
+                    aria-hidden="true" />
+                    
                     <div class="cs-flex-group">
                         <span class="cs-header">Téléphone</span>
                         <a href={`tel:${client.phoneForTel}`} class="cs-link">{client.phoneFormatted}</a>
                     </div>
                 </li>
                 <li class="cs-li">
-                    <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/mail-76.svg" alt="address icon" class="cs-icon" width="40" height="40" decoding="async">
-                    </picture>
+                    <Picture 
+                    src={iconMail}
+                    alt="mail icon"
+                    pictureAttributes={{
+                        class: "cs-icon-wrapper",
+                    }}
+                    class={"cs-icon"}
+                    decoding="async"
+                    aria-hidden="true" />
+
+                   
                     <div class="cs-flex-group">
                         <span class="cs-header">Email</span>
                         <a href={`mailto:${client.email}`} class="cs-link">{client.email}</a>
                     </div>
                 </li>
                 <li class="cs-li">
-                    <picture class="cs-icon-wrapper">
-                        <img aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/pin-76.svg" alt="address icon" class="cs-icon" width="40" height="40" decoding="async">
-                    </picture>
+                   <Picture 
+                    src={iconPin}
+                    alt="adress icon"
+                    pictureAttributes={{
+                        class: "cs-icon-wrapper",
+                    }}
+                    class={"cs-icon"}
+                    decoding="async"
+                    aria-hidden="true" />
                     <div class="cs-flex-group">
                         <span class="cs-header">Zone d'activité</span>
                         <a href={`${client.address.mapLink}`} class="cs-link"  target="_blank">20 kilomètres autour de La Rochelle, Nouvelle-Aquitaine</a>
@@ -97,14 +123,28 @@ import client from "../data/client.json";
         <ul class="cs-card-group">
             <li class="cs-item">
                 <!--Blue Quote-->
-                <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/pink-quotes.svg" decoding="async" alt="quote icon" width="120" height="99">
+                <Picture 
+                    src={iconQuote}
+                    alt="quote icon"
+                   
+                    class={"cs-quote"}
+                    decoding="async"
+                    aria-hidden="true" />
+                
                 <p class="cs-item-text">
                     Un massage très agréable, les noeuds dans mon dos sont partis et je n'ai pas vu passé l'heure. Je recommande.
                 </p>
                 <div class="cs-flex-group">
-                    <picture class="cs-picture">
-                        <img class="cs-profile" src="src/assets/images/icons/unknow-user.svg" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
-                    </picture>
+                    <Picture 
+                    src={unknowUser}
+                    alt="profile icon"
+                    pictureAttributes={{
+                        class: "cs-picture",
+                    }}
+                    class={"cs-profile"}
+                    decoding="async"
+                    aria-hidden="true" />
+                    
                     <span class="cs-name">
                         Valentin GUERIN
                         <span class="cs-job">Client(e)</span>
@@ -118,9 +158,15 @@ import client from "../data/client.json";
                    Trop cool, je n'ai plus du tout mal au dos. Je suis détendu et je me sens bien. Merci beaucoup.
                 </p>
                 <div class="cs-flex-group">
-                    <picture class="cs-picture">
-                        <img class="cs-profile" src="src/assets/images/icons/unknow-user.svg" decoding="async" alt="profile" width="50" height="50" aria-hidden="true">
-                    </picture>
+                    <Picture 
+                    src={unknowUser}
+                    alt="profile icon"
+                    pictureAttributes={{
+                        class: "cs-picture",
+                    }}
+                    class={"cs-profile"}
+                    decoding="async"
+                    aria-hidden="true" />
                     <span class="cs-name">
                         Manon BEAUVOIT
                         <span class="cs-job">Client(e)</span>

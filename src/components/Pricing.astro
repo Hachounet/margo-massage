@@ -1,6 +1,8 @@
 ---
 
 import massages from '../data/massages.json';
+import margauxImg from "../assets/images/margaux2.png";
+import { Picture } from 'astro:assets';
 ---
 
 
@@ -24,26 +26,16 @@ import massages from '../data/massages.json';
         ))}
       </ul>
     </div>
-    <picture class="cs-picture">
-      <!--Mobile Image-->
-      <source
-        media="(max-width: 600px)"
-        srcset="../src/assets/images/margaux2.png"
-      />
-      <!--Tablet and above Image-->
-      <source
-        media="(min-width: 601px)"
-        srcset="../src/assets/images/margaux2.png"
-      />
-      <img
-        loading="lazy"
-        decoding="async"
-        src="../src/assets/images/margaux2.png"
-        alt="hair salon"
-        width="521"
-        height="640"
-      />
-    </picture>
+    <Picture 
+    pictureAttributes={{
+      class: "cs-picture",
+    }}
+    src={margauxImg}
+    alt={"Margaux picture"}
+    formats={["avif", "webp", "jpeg"]}
+    loading={"lazy"}
+    decoding={"async"}/>
+  
   </div>
 </section>
 
