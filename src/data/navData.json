@@ -9,6 +9,7 @@
   },
   {
     "key": "Prestations",
+    "url": "/prestations/",
     
     "children": [
       {
@@ -23,6 +24,7 @@
   },
   {
     "key": "Massages",
+    "url": "/massages/",
     
     "children": [
       {

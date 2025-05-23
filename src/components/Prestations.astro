@@ -1,0 +1,306 @@
+---
+import { Picture } from "astro:assets";
+import proMassageTable from "../assets/images/pro-massage-table.jpg"
+import massageTable from "../assets/images/massage-table.jpg"
+---
+
+
+
+<!-- ============================================ -->
+<!--                    Blog                      -->
+<!-- ============================================ -->
+
+<section id="blog-1851">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Mes prestations</span>
+            <h2 class="cs-title">Des prestations pour tous et toutes</h2>
+            <p class="cs-text">
+                En tant que masseuse professionnelle à domicile sur La Rochelle, je vous propose des prestations adaptées à vos besoins. Que vous soyez un particulier ou un professionnel, je suis là pour vous accompagner dans votre quête de bien-être.
+            </p>
+        </div>
+        <ul class="cs-card-group">
+            <li class="cs-item">
+
+                <a href="/entreprises">
+                     <Picture pictureAttributes={{class:"cs-picture"}} src={proMassageTable} alt={"Massage table in a professionnal environment"} />
+               
+                    <div class="cs-text-box">
+                    <h3 class="cs-h3">Pour les professionnels</h3>
+                   
+                    <p class="cs-item-text">
+                        Séminaires, espace détente, team building, je vous propose des prestations sur mesure pour vos événements. Je peux également intervenir dans votre entreprise pour des massages de bien-être sur chaise ou table.
+                    </p>
+                    </div>
+                </a>
+               
+            </li>
+            <li class="cs-item">
+                <a href="/particuliers">
+                     <Picture pictureAttributes={{class:"cs-picture"}} src={massageTable} alt={"Massage table in a customer environment"}/>
+                
+                    <div class="cs-text-box">
+                    <h3 class="cs-h3">Pour les particuliers</h3>
+                  
+                    <p class="cs-item-text">
+                        Moment détente, cadeau, je vous propose des prestations adaptées à vos besoins. Je me déplace à votre domicile pour vous offrir un moment de bien-être unique et personnalisé.
+                    </p>
+                </div>
+
+                </a>
+               
+            </li>
+        </ul>
+       
+    </div>
+   
+  
+</section>
+                        
+
+<style>
+    /*-- -------------------------- -->
+<---       Meet The Team        -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #blog-1851 {
+    padding: var(--sectionPadding);
+    overflow: hidden;
+    position: relative;
+  }
+  #blog-1851:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    opacity: 0.9;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  #blog-1851 .cs-container {
+    width: 100%;
+    max-width: 44rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    position: relative;
+  }
+  #blog-1851 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    z-index: 1;
+  }
+  #blog-1851 .cs-title {
+    max-width: none;
+  }
+  #blog-1851 .cs-card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: stretch;
+    justify-content: stretch;
+    row-gap: 1rem;
+  }
+  #blog-1851 .cs-item {
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    /* 100px - 200px */
+    padding-top: clamp(6.25rem, 16vw, 12.5rem);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-column: span 12;
+    position: relative;
+    z-index: 1;
+  }
+
+   #blog-1851 .cs-item a {
+
+    text-decoration: none;;
+
+   }
+
+  #blog-1851 .cs-item:hover {
+    cursor: pointer;
+  }
+  #blog-1851 .cs-item:hover .cs-picture img {
+    transform: scale(1.1);
+  }
+  #blog-1851 .cs-item:hover .cs-h3 {
+    color: var(--primary);
+  }
+  #blog-1851 .cs-picture {
+    width: 100%;
+    /* 300px - 500px */
+    max-width: clamp(18.75rem, 38vw, 31.25rem);
+    /* 180px - 280px */
+    height: clamp(11.25rem, 22vw, 17.5rem);
+    box-sizing: border-box;
+    background-color: #fff;
+    /* clips img tag from overflowing it on hover */
+    overflow: hidden;
+    border: 8px solid var(--primary);
+    border-radius: 16.25rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  #blog-1851 .cs-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.7s;
+  }
+  #blog-1851 .cs-text-box {
+    text-align: center;
+    height: 100%;
+    /* 24px - 24px */
+    padding: clamp(1rem, 3.5vw, 2rem);
+    /* 100px - 120px */
+    padding-top: clamp(6.25rem, 9vw, 7.5rem);
+    /* 32px - 40px */
+    padding-bottom: clamp(2rem, 4vw, 2.5rem);
+    background-color: #fff;
+    border-radius: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+    align-self: stretch;
+  }
+  #blog-1851 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+    font-weight: 700;
+    line-height: 120%;
+    width: 100%;
+    margin: 0 0 0.5rem 0;
+    color: var(--headerColor);
+    transition: color 0.3s;
+  }
+  #blog-1851 .cs-details {
+    margin: 0 0 1rem 0;
+    display: flex;
+    gap: 1.25rem;
+  }
+  #blog-1851 .cs-time,
+  #blog-1851 .cs-date {
+    font-size: 1rem;
+    line-height: 1.5em;
+    color: var(--bodyTextColor);
+    display: flex;
+    gap: 0.5rem;
+  }
+  #blog-1851 .cs-icon {
+    width: 1.25rem;
+    height: auto;
+    display: block;
+  }
+  #blog-1851 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    width: 100%;
+    margin: 0 0 auto;
+    color: var(--bodyTextColor);
+  }
+}
+ 
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #blog-1851:before {
+    background: linear-gradient(89deg, rgba(255, 243, 236, 0.9) 44.46%, rgba(255, 243, 236, 0) 78.47%);
+    opacity: 1;
+  }
+  #blog-1851 .cs-container {
+    max-width: 80rem;
+  }
+  #blog-1851 .cs-card-group {
+    /* 16px - 20px */
+    column-gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  #blog-1851 .cs-item {
+    height: auto;
+    grid-column: span 6;
+    justify-content: center;
+    align-items: center;
+  }
+  #blog-1851 .cs-text-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+}
+
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode #blog-1851 {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  body.dark-mode #blog-1851:before {
+    display: none;
+  }
+  body.dark-mode #blog-1851 .cs-title,
+  body.dark-mode #blog-1851 .cs-text,
+  body.dark-mode #blog-1851 .cs-h3,
+  body.dark-mode #blog-1851 .cs-date,
+  body.dark-mode #blog-1851 .cs-time,
+  body.dark-mode #blog-1851 .cs-item-text {
+    color: var(--bodyTextColorWhite);
+  }
+  body.dark-mode #blog-1851 .cs-text,
+  body.dark-mode #blog-1851 .cs-item-text {
+    opacity: 0.8;
+  }
+  body.dark-mode #blog-1851 .cs-picture {
+    border-color: var(--medium);
+    background-color: var(--medium);
+  }
+  body.dark-mode #blog-1851 .cs-text-box {
+    background-color: var(--headerColor);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  body.dark-mode #blog-1851 .cs-text-box:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.6;
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+ 
+}
+                                
+</style>
