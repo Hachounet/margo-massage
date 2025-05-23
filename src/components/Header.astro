@@ -795,39 +795,45 @@ import navData from '../data/navData.json';
 
   // Handle active state for navigation links
   document.addEventListener("DOMContentLoaded", function () {
-    const links = document.querySelectorAll("#cs-navigation .cs-li-link");
-    const currentUrl = window.location.pathname;
+  const links = document.querySelectorAll("#cs-navigation .cs-li-link");
+  const currentUrl = window.location.pathname;
 
-    // Normalize URLs to handle trailing slashes
-    const normalizeUrl = (url) => url.replace(/\/$/, "");
+  // Normalize URLs to handle trailing slashes
+  const normalizeUrl = (url) => (url ? url.replace(/\/$/, "") : "");
 
-    links.forEach((link) => {
-      const linkUrl = normalizeUrl(link.getAttribute("href"));
-      const isActive = linkUrl === normalizeUrl(currentUrl);
+  links.forEach((link) => {
+    const href = link.getAttribute("href");
+    if (!href) return; // Skip links without href
 
-      // Handle child links
-      const parentDropdown = link.closest(".cs-dropdown");
-      if (parentDropdown) {
-        const childLinks = parentDropdown.querySelectorAll(".cs-drop-link");
-        const hasActiveChild = Array.from(childLinks).some(
-          (child) => normalizeUrl(child.getAttribute("href")) === normalizeUrl(currentUrl)
-        );
+    const linkUrl = normalizeUrl(href);
+    const isActive = linkUrl === normalizeUrl(currentUrl);
 
-        // If the link is a parent and has an active child, add cs-active
-        if (hasActiveChild) {
-          link.classList.add("cs-active");
-        } else {
-          link.classList.remove("cs-active");
+    // Handle child links
+    const parentDropdown = link.closest(".cs-dropdown");
+    if (parentDropdown) {
+      const childLinks = parentDropdown.querySelectorAll(".cs-drop-link");
+      const hasActiveChild = Array.from(childLinks).some(
+        (child) => {
+          const childHref = child.getAttribute("href");
+          return childHref && normalizeUrl(childHref) === normalizeUrl(currentUrl);
         }
-      }
+      );
 
-      // Handle the link itself (parent or non-dropdown link)
-      if (isActive) {
+      // If the link is a parent and has an active child, add cs-active
+      if (hasActiveChild) {
         link.classList.add("cs-active");
-      } else if (!parentDropdown) {
-        // Only remove cs-active from non-dropdown links or links without active children
+      } else {
         link.classList.remove("cs-active");
       }
-    });
+    }
+
+    // Handle the link itself (parent or non-dropdown link)
+    if (isActive) {
+      link.classList.add("cs-active");
+    } else if (!parentDropdown) {
+      // Only remove cs-active from non-dropdown links or links without active children
+      link.classList.remove("cs-active");
+    }
   });
+});
 </script>
