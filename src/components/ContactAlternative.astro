@@ -78,8 +78,12 @@ import unknowUser from "../assets/images/icons/unknow-user.svg";
             </ul>
         </div>
         <!--Form-->
-         <form class="cs-form" id="cs-form-1388" name="Contact Form" method="post">
+     <form action="https://api.web3forms.com/submit" method="POST" class="cs-form" id="cs-form-1388" name="Contact Form">
             <h3 class="cs-h3">Me contacter</h3>
+            
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="66618a32-3046-423b-9840-37ff625027c7">
+            
             <label class="cs-label">
                 Nom *
                 <input class="cs-input" required type="text" id="name-1388" name="name" placeholder="Nom" autocomplete="name">
@@ -94,12 +98,21 @@ import unknowUser from "../assets/images/icons/unknow-user.svg";
             </label>
             <label class="cs-label">
                 Message *
-                <textarea class="cs-input cs-textarea" required name="Message" id="message-1388" placeholder="Laissez moi un message..."></textarea>
+                <textarea class="cs-input cs-textarea" required name="message" id="message-1388" placeholder="Laissez moi un message..."></textarea>
             </label>
+            
+            <!-- Honeypot Spam Protection -->
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+            
+            <!-- Optional: Custom Confirmation Page -->
+            <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+            
             <button class="cs-button-solid cs-submit" type="submit">Envoyer</button>
         </form>
     </div>
 </section>
+
+
 
 <!-- ============================================ -->
 <!--          Google Map Iframe Embed             -->
