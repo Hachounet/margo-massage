@@ -11,6 +11,8 @@ import lotsaSvg from "../assets/images/particules/lotsa-dots.svg"
 import brownLinesSvg from "../assets/images/particules/brown-lines-3.svg"
 import lightLeafSvg from "../assets/images/particules/light-green-leaf.svg"
 
+const { h1Choice } = Astro.props;
+
 
 ---
 
@@ -33,7 +35,12 @@ import lightLeafSvg from "../assets/images/particules/light-green-leaf.svg"
     <section class="cs-content-default">
         <div class="cs-container">
             <div class="cs-content">
-                <span class="cs-topper">Mes prestations</span>
+               {h1Choice === true ? (
+                <h1 class="cs-topper">Présentations de la prestation pour Particuliers</h1>
+              ) : (
+                <span class="cs-topper">Présentations de la prestation pour Particuliers</span>
+              )}
+                
                 <h1 class="cs-title">Massage à domicile à La Rochelle pour votre bien-être</h1>
                 <p>
                     Offrez-vous une parenthèse de détente avec MargoMassage, votre <strong>masseuse professionnelle à domicile à La Rochelle</strong>. Que vous souhaitiez relâcher les tensions musculaires, vous détendre après une journée intense ou simplement vous ressourcer, je propose des <strong>massages à domicile</strong> adaptés à vos besoins. Profitez d’un moment de relaxation sur mesure, directement chez vous à La Rochelle et ses environs.

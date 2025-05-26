@@ -5,6 +5,8 @@ import particuleDermBigLeaf from "../assets/images/particules/derm-big-leaf.svg"
 import particuleHeroPeachBlob from "../assets/images/particules/hero-peach-blob.svg";
 import particuleTwirl from "../assets/images/particules/twirl.svg";
 import particuleBeigeBlob from "../assets/images/particules/beige-blob-2.svg";
+
+const { h1Choice } = Astro.props;
 ---
 
 
@@ -27,8 +29,13 @@ import particuleBeigeBlob from "../assets/images/particules/beige-blob-2.svg";
     <section class="cs-content-default">
         <div class="cs-container">
             <div class="cs-content">
-        <span class="cs-topper">Massages à Domicile</span>
-        <h1 class="cs-title">Le Massage Amma</h1>
+              {h1Choice === true ? (
+                <h1 class="cs-topper">Présentation du massage Amma</h1>
+              ) : (
+                <span class="cs-topper">Présentation du massage Amma</span>
+              )}
+    
+        <h2 class="cs-title">Le Massage Amma</h2>
         <p>
             Je suis Margaux, fondatrice de MargoMassage, et je vous invite à découvrir le massage Amma, un soin énergétique d’origine japonaise qui revitalise et équilibre le corps et l’esprit. À votre domicile à La Rochelle, je vous propose une expérience unique pour relâcher le stress, stimuler votre énergie et retrouver une harmonie intérieure. Ce massage, pratiqué habillé et sans huile, est parfait pour une pause rapide ou une détente profonde, que vous soyez débordé ou en quête de sérénité.
         </p>

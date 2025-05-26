@@ -11,11 +11,11 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
 
 <BaseLayout
-  title="Accueil"
-  description="Page d'accueil de l'entreprise MargoMassage, masseuse à domicile à La Rochelle"
+  title="Entreprises"
+  description="Page des prestations aux entreprises de MargoMassage, masseuse à domicile à La Rochelle"
   preloadedImage={optimizedImage}
 >
   
-    <ProfessionnalsContent />
+    <ProfessionnalsContent h1Choice={true} />
     <CTA/>
 </BaseLayout>

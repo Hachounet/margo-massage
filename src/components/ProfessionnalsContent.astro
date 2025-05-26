@@ -10,6 +10,8 @@ import lotsaSvg from "../assets/images/particules/lotsa-dots.svg"
 import brownLinesSvg from "../assets/images/particules/brown-lines-3.svg"
 import lightLeafSvg from "../assets/images/particules/light-green-leaf.svg"
 
+const { h1Choice } = Astro.props;
+
 ---
 
 
@@ -31,8 +33,13 @@ import lightLeafSvg from "../assets/images/particules/light-green-leaf.svg"
     <section class="cs-content-default">
         <div class="cs-container">
             <div class="cs-content">
-                <span class="cs-topper">Nos services pour entreprises</span>
-                <h1 class="cs-title">Massage en entreprise à La Rochelle</h1>
+               {h1Choice === true ? (
+                <h1 class="cs-topper">Présentation de la prestation pour Entreprises</h1>
+              ) : (
+                <span class="cs-topper">Présentation de la prestation pour Entreprises</span>
+              )}
+                
+                <h2 class="cs-title">Massage en entreprise à La Rochelle</h2>
                 <p>
                     Avec MargoMassage, offrez à vos collaborateurs une expérience de <strong>massage entreprise à La Rochelle</strong> qui favorise la détente et la productivité. En tant que <strong>masseuse professionnelle à La Rochelle</strong>, je propose des massages bien-être adaptés aux cadres professionnels, que ce soit pour un séminaire, un événement d’entreprise ou une journée de team-building. Mon objectif est d’apporter relaxation et sérénité directement sur votre lieu de travail ou lors de vos événements à La Rochelle.
                 </p>

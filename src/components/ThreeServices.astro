@@ -4,6 +4,8 @@ import { Picture } from 'astro:assets';
 import person1Image from '../assets/images/person1.avif';
 import person2Image from '../assets/images/person2.avif';
 import person3Image from '../assets/images/person3.avif';
+
+const { h1Choice } = Astro.props;
 ---
 
 <!-- ============================================ --><!--                  Services                    --><!-- ============================================ -->
@@ -11,8 +13,12 @@ import person3Image from '../assets/images/person3.avif';
  
   <div class="cs-container">
     <div class="cs-content">
-      <span class="cs-topper">Une expérience unique</span>
-      <h2 class="cs-title cu-font-nexa">Pour chaque besoin</h2>
+       {h1Choice === true ? (
+                <h1 class="cs-topper">Massage à domicile sur La Rochelle</h1>
+              ) : (
+                <span class="cs-topper">Massage à domicile sur La Rochelle</span>
+              )}
+      <h2 class="cs-title cu-font-nexa">Pour une expérience unique</h2>
     </div>
     <ul class="cs-card-group">
       <li class="cs-item">

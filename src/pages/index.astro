@@ -1,13 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import Services from '../components/Services.astro';
 import CTA from '../components/CTA.astro';
 import Massages from '../components/Massages.astro';
-import Contact from '../components/Contact.astro';
-
 import ThreeServices from '../components/ThreeServices.astro';
 import Pricing from '../components/Pricing.astro';
+
+
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
 import { getOptimizedImage } from '../js/utils';
 import landingImage from '../assets/images/margaux.png'; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -16,14 +15,14 @@ const optimizedImage = await getOptimizedImage(landingImage);
 
 <BaseLayout
   title="Accueil"
-  description="Page d'accueil de l'entreprise MargoMassage, masseuse à domicile à La Rochelle"
+  description="Page d'accueil de l'entreprise MargoMassage, masseuse à domicile à La Rochelle, Nouvelle Aquitaine, France."
   preloadedImage={optimizedImage}
 >
   
-  <Hero />
-  <ThreeServices />
-  <Massages />
-  <Pricing />
+  <Hero h1Choice={true}/>
+  <ThreeServices h1Choice={false} />
+  <Massages h1Choice={false}/>
+  <Pricing h1Choice={false}/>
   <CTA/>
 </BaseLayout>
 

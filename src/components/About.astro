@@ -4,6 +4,8 @@ import brownLines from '../assets/images/particules/brown-lines-3.svg';
 import dotGroup from '../assets/images/particules/dot-group.svg';
 import { Picture } from 'astro:assets';
 import { Image } from 'astro:assets';
+
+const { h1Choice } = Astro.props;
 ---
 
 
@@ -15,7 +17,12 @@ import { Image } from 'astro:assets';
     <div class="cs-container">
         <div class="cs-content">
     <div class="cs-flex">
-        <span class="cs-topper">À propos de moi</span>
+      {h1Choice === true ? (
+          <h1 class="cs-topper">Masseuse à domicile sur La Rochelle</h1>
+        ) : (
+          <span class="cs-topper">Masseuse à domicile sur La Rochelle</span>
+        )}
+       
         <h2 class="cs-title">MargoMassage, votre masseuse à domicile à La Rochelle</h2>
     </div>
     <p class="cs-text-large">

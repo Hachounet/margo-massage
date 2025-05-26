@@ -5,6 +5,8 @@ import particuleTwirl from '../assets/images/particules/twirl.svg';
 import particuleHeroPeachBlob from '../assets/images/particules/hero-peach-blob.svg';
 import particuleBeigeBlob from '../assets/images/particules/beige-blob-2.svg';
 import particuleDermBigLeaf from '../assets/images/particules/derm-big-leaf.svg';
+
+const { h1Choice } = Astro.props;
 ---
 
 
@@ -26,8 +28,12 @@ import particuleDermBigLeaf from '../assets/images/particules/derm-big-leaf.svg'
     <section class="cs-content-default">
         <div class="cs-container">
             <div class="cs-content">
-                 <span class="cs-topper">Massages à Domicile</span>
-                <h1 class="cs-title">Le Massage Californien</h1>
+                  {h1Choice === true ? (
+                <h1 class="cs-topper">Présentation du Massage Californien</h1>
+              ) : (
+                <span class="cs-topper">Présentation du Massage Californien</span>
+              )}
+                <h2 class="cs-title">Le massage Californien</h2>
                 <p>
                     Je suis Margaux, fondatrice de MargoMassage, et je vous invite à découvrir le massage Californien, un soin doux et enveloppant qui apaise le corps et l’esprit. À votre domicile à La Rochelle, je crée une bulle de détente où vous pouvez lâcher prise. Avec des mouvements fluides et des huiles naturelles, ce massage soulage vos tensions, améliore votre circulation et vous offre un moment de bien-être profond. Parfait pour vous détendre après une longue journée ou pour vous offrir une pause méritée.
                 </p>

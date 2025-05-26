@@ -25,13 +25,20 @@ const localIcons = {
   'massage-svgrepo-com.svg': massageIcon,
   'massage-svgrepo-com(1).svg': massageIcon2,
 }
+
+const { h1Choice } = Astro.props;
 ---
 
 <!-- ============================================ --><!--                  Services                    --><!-- ============================================ -->
 <section id="services-447">
   <div class="cs-container">
     <div class="cs-content">
-      <span class="cs-topper">Les massages</span>
+       {h1Choice === true ? (
+                <h1 class="cs-topper">Présentation des différents massages</h1>
+              ) : (
+                <span class="cs-topper">Présentation des différents massages</span>
+              )}
+     
       <h2 class="cs-title">Des massages relaxants, détoxs et ciblés</h2>
       <p class="cs-text">
         Parce que chaque personne est unique et que vous méritez une détente

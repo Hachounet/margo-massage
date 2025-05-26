@@ -6,6 +6,8 @@ import particuleTwirl from '../assets/images/particules/twirl.svg';
 import particuleHeroPeachBlob from '../assets/images/particules/hero-peach-blob.svg';
 import particuleBeigeBlob from '../assets/images/particules/beige-blob-2.svg';
 import particuleDermBigLeaf from '../assets/images/particules/derm-big-leaf.svg';
+
+const { h1Choice } = Astro.props;
 ---
 
 
@@ -28,8 +30,13 @@ import particuleDermBigLeaf from '../assets/images/particules/derm-big-leaf.svg'
     <section class="cs-content-default">
         <div class="cs-container">
             <div class="cs-content">
-        <span class="cs-topper">Massages à Domicile</span>
-        <h1 class="cs-title">Le massage Suédois</h1>
+               {h1Choice === true ? (
+                <h1 class="cs-topper">Présentation du massage Suédois</h1>
+              ) : (
+                <span class="cs-topper">Présentation du massage Suédois</span>
+              )}
+        
+        <h2 class="cs-title">Le massage Suédois</h2>
         <p>
             Je suis Margaux, fondatrice de MargoMassage, et je vous propose de découvrir le massage suédois, un soin dynamique et tonifiant qui revitalise le corps et apaise l’esprit. À votre domicile à La Rochelle, je vous offre une expérience sur mesure pour détendre vos muscles, améliorer votre circulation et libérer les tensions accumulées. Que vous soyez sportif, stressé ou simplement en quête de vitalité, ce massage est idéal pour retrouver énergie et équilibre.
         </p>

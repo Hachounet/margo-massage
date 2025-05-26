@@ -3,6 +3,8 @@
 import massages from '../data/massages.json';
 import margauxImg from "../assets/images/margaux2.png";
 import { Picture } from 'astro:assets';
+
+const { h1Choice } = Astro.props;
 ---
 
 
@@ -11,7 +13,11 @@ import { Picture } from 'astro:assets';
 <section id="pricing-976">
   <div class="cs-container">
     <div class="cs-content">
-      <span class="cs-topper">Tarifs</span>
+         {h1Choice === true ? (
+                <h1 class="cs-topper">Tarifs</h1>
+              ) : (
+                <span class="cs-topper">Tarifs</span>
+              )}
       <h2 class="cs-title cu-font-nexa">Les différents massages</h2>
       <!--Menu-->
       <ul class="cs-menu-group">

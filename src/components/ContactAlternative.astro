@@ -7,6 +7,8 @@ import iconMail from "../assets/images/icons/mail-76.svg";
 import iconPin from "../assets/images/icons/pin-76.svg";
 import iconQuote from "../assets/images/icons/pink-quotes.svg";
 import unknowUser from "../assets/images/icons/unknow-user.svg";
+
+const { h1Choice } = Astro.props;
 ---
 
 
@@ -21,8 +23,14 @@ import unknowUser from "../assets/images/icons/unknow-user.svg";
 <section id="contact-1403">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Contact</span>
-            <h2 class="cs-title">Discutons</h2>
+             {h1Choice === true ? (
+                <h1 class="cs-topper">Contact</h1>
+              ) : (
+                <span class="cs-topper">Contact</span>
+              )}
+            
+            
+            <h2 class="cs-title">Prenons contact</h2>
             <p class="cs-text">
                 Que vous ayez une question ou que vous souhaitiez prendre rendez-vous, je réponds à toutes vos demandes par mail ou au téléphone entre 09h et 12h puis de 14h à 19h.
             </p>
@@ -79,7 +87,7 @@ import unknowUser from "../assets/images/icons/unknow-user.svg";
         </div>
         <!--Form-->
      <form action="https://api.web3forms.com/submit" method="POST" class="cs-form" id="cs-form-1388" name="Contact Form">
-            <h3 class="cs-h3">Me contacter</h3>
+            <h2 class="cs-h3">Me contacter</h2>
             
             <!-- Web3Forms Access Key -->
             <input type="hidden" name="access_key" value="66618a32-3046-423b-9840-37ff625027c7">

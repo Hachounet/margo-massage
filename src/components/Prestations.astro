@@ -2,6 +2,8 @@
 import { Picture } from "astro:assets";
 import proMassageTable from "../assets/images/pro-massage-table.jpg"
 import massageTable from "../assets/images/massage-table.jpg"
+
+const { h1Choice } = Astro.props;
 ---
 
 
@@ -13,8 +15,13 @@ import massageTable from "../assets/images/massage-table.jpg"
 <section id="blog-1851">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Mes prestations</span>
-            <h2 class="cs-title">Des prestations pour tous et toutes</h2>
+           {h1Choice === true ? (
+                <h1 class="cs-topper">Présentation des différentes prestations</h1>
+              ) : (
+                <span class="cs-topper">Présentation des différentes prestations</span>
+              )}
+            
+            <h2 class="cs-title">Des prestations adaptées à chaque cadre</h2>
             <p class="cs-text">
                 En tant que masseuse professionnelle à domicile sur La Rochelle, je vous propose des prestations adaptées à vos besoins. Que vous soyez un particulier ou un professionnel, je suis là pour vous accompagner dans votre quête de bien-être.
             </p>
@@ -26,7 +33,7 @@ import massageTable from "../assets/images/massage-table.jpg"
                      <Picture pictureAttributes={{class:"cs-picture"}} src={proMassageTable} alt={"Massage table in a professionnal environment"} />
                
                     <div class="cs-text-box">
-                    <h3 class="cs-h3">Pour les professionnels</h3>
+                    <h2 class="cs-h3">Pour les professionnels</h2>
                    
                     <p class="cs-item-text">
                         Séminaires, espace détente, team building, je vous propose des prestations sur mesure pour vos événements. Je peux également intervenir dans votre entreprise pour des massages de bien-être sur chaise ou table.
@@ -40,7 +47,7 @@ import massageTable from "../assets/images/massage-table.jpg"
                      <Picture pictureAttributes={{class:"cs-picture"}} src={massageTable} alt={"Massage table in a customer environment"}/>
                 
                     <div class="cs-text-box">
-                    <h3 class="cs-h3">Pour les particuliers</h3>
+                    <h2 class="cs-h3">Pour les particuliers</h2>
                   
                     <p class="cs-item-text">
                         Moment détente, cadeau, je vous propose des prestations adaptées à vos besoins. Je me déplace à votre domicile pour vous offrir un moment de bien-être unique et personnalisé.

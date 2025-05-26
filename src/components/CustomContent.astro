@@ -5,6 +5,8 @@ import particuleTwirl from '../assets/images/particules/twirl.svg';
 import particuleHeroPeachBlob from '../assets/images/particules/hero-peach-blob.svg';
 import particuleBeigeBlob from '../assets/images/particules/beige-blob-2.svg';
 import particuleDermBigLeaf from '../assets/images/particules/derm-big-leaf.svg';
+
+const { h1Choice } = Astro.props;
 ---
 
 
@@ -26,7 +28,12 @@ import particuleDermBigLeaf from '../assets/images/particules/derm-big-leaf.svg'
     <section class="cs-content-default">
         <div class="cs-container">
            <div class="cs-content">
-        <span class="cs-topper">Massages à Domicile</span>
+             {h1Choice === true ? (
+                <h1 class="cs-topper">Présentation du massage Personnalisé</h1>
+              ) : (
+                <span class="cs-topper">Présentation du massage Personnalisé</span>
+              )}
+       
         <h1 class="cs-title">Le massage Personnalisé</h1>
         <p>
             Je suis Margaux, fondatrice de MargoMassage, et je vous propose un massage personnalisé, un soin unique conçu spécialement pour répondre à vos besoins et envies. À votre domicile à La Rochelle, je crée une expérience sur mesure qui combine différentes techniques pour vous offrir détente, énergie ou soulagement, selon ce que vous recherchez. Que vous souhaitiez apaiser votre stress, soulager des tensions musculaires ou simplement vous faire plaisir, ce massage est fait pour vous.

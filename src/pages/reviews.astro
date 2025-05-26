@@ -2,7 +2,6 @@
 import BaseLayout from "..//layouts/BaseLayout.astro";
 import CTA from "../components/CTA.astro";
 import { Picture } from "astro:assets";
-import CTAImage from "../assets/images/back-massage2.jpg"
 import unknowUserIcon from "../assets/images/icons/unknow-user.svg"
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Landing (for rendering)
@@ -23,201 +22,240 @@ const optimizedImage = await getOptimizedImage(landingImage)
   <!--                  Reviews                     -->
   <!-- ============================================ -->
 
-  <section id="reviews">
-    
-    <div class="container">
-      
-      <div class="review">
-        <Picture 
-        class={"profile"}
-        src={unknowUserIcon}
-        alt="unknow user profile image"
-        loading={"lazy"}
-        decoding={"async"}
-        />
-       
-        <p>
-          Un massage très agréable, les noeuds dans mon dos sont partis et je n'ai pas vu passé l'heure. Je recommande.
-        </p>
-        <div class="star-group">
-          <span class="name">Valentin GUERIN.<span class="desc">Client(e)</span></span>
-          <picture>
-            <img
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="/assets/svgs/stars.svg"
-              alt="stars"
-              width="91"
-              height="15"
-            />
-          </picture>
+  <section id="reviews-67">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-topper">Avis clients</h1>
+            <h2 class="cs-title">Quelques retours d'expériences</h2>
+            <p class="cs-text">
+                Cette section est dédiée aux avis clients. Vous pouvez y lire leurs expériences et témoignages concernant les massages à domicile que je propose. Je suis fière de partager ces retours positifs qui témoigne de la satisfaction client après mon passage. En cliquant sur "Voir plus", vous pourrez découvrir d'autres avis sur ma page Google qui est actuellement en cours de construction.
+            </p>
         </div>
-      </div>
-      <div class="review">
-          <Picture 
-              class={"profile"}
-              src={unknowUserIcon}
-              alt="unknow user profile image"
-              loading={"lazy"}
-              decoding={"async"}
-            />
-       
-        <p>
-            Trop cool, je n'ai plus du tout mal au dos. Je suis détendu et je me sens bien. Merci beaucoup.
-        </p>
-        <div class="star-group">
-          <span class="name">Manon BEAUVOIT.<span class="desc">Client(e)</span></span>
-          <picture>
-            <img
-              aria-hidden="true"
-              loading="lazy"
-              decoding="async"
-              src="/assets/svgs/stars.svg"
-              alt="stars"
-              width="91"
-              height="15"
-            />
-          </picture>
-        </div>
-      </div>
+        <ul class="cs-card-group">
+            <!-- Review 1 -->
+            <li class="cs-item">
+              
+                
+                <Picture 
+                    class={"cs-item-img"}
+                    src={unknowUserIcon}
+                    alt="unknow user profile image"
+                    loading={"lazy"}
+                    decoding={"async"}
+                    width={"80"}
+                    height={"80"}
+                  />
+                <p class="cs-item-text">
+                     Un massage très agréable, les noeuds dans mon dos sont partis et je n'ai pas vu passé l'heure. Je recommande.
+                </p>
+                <div class="cs-info">
+                    <div class="cs-flex-group">
+                        <span class="cs-name">Valentin GUERIN</span>
+                        <span class="cs-desc">Client(e)</span>
+                    </div>
+                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16">
+                </div>
+            </li>
+            <!-- Review 2 -->
+            <li class="cs-item">
+                 <Picture 
+                    class={"cs-item-img"}
+                    src={unknowUserIcon}
+                    alt="unknow user profile image"
+                    loading={"lazy"}
+                    decoding={"async"}
+                    width={"80"}
+                    height={"80"}
+                  />
+                <p class="cs-item-text">
+                    Trop cool, je n'ai plus du tout mal au dos. Je suis détendu et je me sens encore bien le lendemain. Merci beaucoup.
+                </p>
+                <div class="cs-info">
+                    <div class="cs-flex-group">
+                        <span class="cs-name">Manon BEAUVOIT</span>
+                        <span class="cs-desc">Client(e)</span>
+                    </div>
+                    <img class="cs-item-stars" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/Reviews/stars-yellow.svg" alt="stars" width="96" height="16">
+                </div>
+            </li>
+        </ul>
+        <a aria-label="read more reviews" href="" class="cs-button-solid">Voir plus</a>
     </div>
-  </section>
+</section>
+                                
+
+ 
   <CTA />
 </BaseLayout>
 
-<style lang="less">
-  /* PAGE-SPECIFIC STYLES FOR THE REVIEWS PAGE */
+<style>
 
   /*-- -------------------------- -->
-<---           Reviews          -->
+<---          Reviews           -->
 <--- -------------------------- -*/
 
-  /* Mobile */
-  @media only screen and (min-width: 0em) {
-    #reviews {
-      margin: auto;
-      padding-top: (120/16rem);
-      padding-bottom: (50/16rem);
-
-      .container {
-        width: 96%;
-        max-width: (1320/16rem);
-      }
-
-      .review {
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #reviews-67 {
+        padding: var(--sectionPadding);
+    }
+    #reviews-67 .cs-container {
         width: 100%;
-        max-width: (410/16rem);
+        max-width: 80rem;
         margin: auto;
-        margin-bottom: (100/16rem);
-        padding: (64/16rem) (30/16rem) (18/16rem) (30/16rem);
-        background: #fff;
-        box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
-        border-radius: (5/16rem);
         display: flex;
         flex-direction: column;
-        position: relative;
-        &:last-of-type {
-          margin-bottom: 0;
-        }
-
-        .profile {
-          width: (99/16rem);
-          height: (99/16rem);
-          margin-bottom: (16/16rem);
-          margin-left: 0;
-          border-radius: 50%;
-          display: block;
-          position: absolute;
-          top: (-51/16rem);
-          left: (30/16rem);
-        }
-
-        p {
-          line-height: 1.5em;
-          text-align: left;
-          margin-bottom: (28/16rem);
-        }
-
-        .star-group {
-          margin-top: auto;
-          padding-top: (16/16rem);
-          border-top: 1px solid #e7e7e7;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          flex-wrap: nowrap;
-
-          .name {
-            font-weight: bold;
-            line-height: (24/16rem);
-            text-align: left;
-            color: #1a1a1a;
-            display: block;
-          }
-
-          .desc {
-            font-weight: 400;
-            color: #575757;
-            display: block;
-          }
-
-          img {
-            width: (91/16rem);
-            height: (15/16rem);
-            margin: 0;
-            display: block;
-          }
-        }
-      }
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
     }
-  }
-
-  /* Tablet */
-  @media only screen and (min-width: 48em) {
-    #reviews {
-      padding-top: (150/16rem);
-      padding-bottom: (50/16rem);
-
-      .container {
-        font-size: ~"min(1.4vw, 1em)";
-        padding: 0;
+    #reviews-67 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        column-gap: (30/16rem);
-      }
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
 
-      .review {
+    #reviews-67 .cs-card-group {
+        padding: 0;
         margin: 0;
-        margin-bottom: (150/16rem);
-
-        &:last-of-type {
-          margin-bottom: (150/16rem);
-        }
-      }
+        display: flex;
+        flex-direction: column;
+        column-gap: 1.25rem;
+        row-gap: 4rem;
     }
-  }
-
-  /* Dark Mode */
-  @media only screen and (min-width: 0em) {
-    body.dark-mode {
-      #reviews {
-        .review {
-          background: var(--medium);
-
-          .star-group {
-            .name {
-              color: #fff;
-            }
-
-            .desc {
-              color: #fff;
-              opacity: 0.7;
-            }
-          }
-        }
-      }
+    #reviews-67 .cs-item {
+        text-align: left;
+        list-style: none;
+        width: 100%;
+        max-width: 39.375rem;
+        /* pushes up the same amount the cs-item-img overlaps the card */
+        margin: 2.5rem 0 0 0;
+        /* Padding L & R - 16px - 32px */
+        padding: 3.75rem clamp(1rem, 3.2vw, 2rem) 0;
+        /* 32px - 40px */
+        padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
+        box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
+        border-radius: 0.25rem;
+        background: #fff;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        /* Prevents padding from affecting height & width */
+        box-sizing: border-box;
     }
-  }
+    #reviews-67 .cs-item:last-of-type {
+        margin-bottom: 0;
+    }
+    #reviews-67 .cs-item-img {
+        width: 5rem;
+        height: 5rem;
+        position: absolute;
+        top: -2.5rem;
+    }
+    #reviews-67 .cs-item-text {
+        font-size: 1rem;
+        line-height: 1.5em;
+        margin: 0 0 1.25rem;
+        padding-bottom: 1.25rem;
+        color: var(--bodyTextColor);
+        border-bottom: 1px solid #e8e9ec;
+    }
+    #reviews-67 .cs-info {
+        width: 100%;
+        /* margin-top auto pushes up against the rest of the card, that way when one card has more text than the other, the reviewer info is always pushed to the bottom and lined up with the rest of them.  This ensures better responsiveness for changing content */
+        margin: auto 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #reviews-67 .cs-flex-group {
+        width: 100%;
+        margin: 0;
+    }
+    #reviews-67 .cs-name {
+        font-size: 1rem;
+        line-height: 1.5em;
+        font-weight: 700;
+        width: 40%;
+        margin: 0;
+        display: block;
+        color: var(--headerColor);
+    }
+    #reviews-67 .cs-desc {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #7d799c;
+        display: block;
+    }
+    #reviews-67 .cs-item-stars {
+        width: 6rem;
+        height: 1rem;
+    }
+    #reviews-67 .cs-button-solid {
+        font-size: 1rem;
+        /* 46px - 56px */
+        line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+        text-decoration: none;
+        font-weight: 700;
+        text-align: center;
+        margin: 0;
+        color: #fff;
+        min-width: 9.375rem;
+        padding: 0 1.5rem;
+        background-color: var(--primary);
+        border-radius: 0.25rem;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        /* prevents padding from adding to the width */
+        box-sizing: border-box;
+    }
+    #reviews-67 .cs-button-solid:before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 0%;
+        background: #000;
+        opacity: 1;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        border-radius: 0.25rem;
+        transition: width 0.3s;
+    }
+    #reviews-67 .cs-button-solid:hover:before {
+        width: 100%;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #reviews-67 .cs-card-group {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #reviews-67 .cs-title,
+    body.dark-mode #reviews-67 .cs-text,
+    body.dark-mode #reviews-67 .cs-item-text,
+    body.dark-mode #reviews-67 .cs-name {
+        color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #reviews-67 .cs-item {
+        background: rgba(0, 0, 0, 0.2);
+    }
+    body.dark-mode #reviews-67 .cs-desc {
+        color: var(--primaryLight);
+    }
+}
+
+                                
+
 </style>
