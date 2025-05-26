@@ -28,9 +28,9 @@
   }
 
   // Text styles - can be replaced using CodeStitch's "Content Flair" Stitches
-  .cs-topper {
-    // font-size: var(--topperFontSize);
-    // margin-block: 0.67em; /* For Lighthouse H1UserAgentFontSizeInSection ERROR */
+ .cs-topper {
+    font-size: var(--topperFontSize);
+    margin-block: 0.67em;
     font-weight: 700;
     line-height: 1.2em;
     text-transform: uppercase;
@@ -38,7 +38,6 @@
     color: var(--secondary);
     display: block;
   }
-
   .cs-title {
     font-size: var(--headerFontSize);
     font-weight: 900;
@@ -182,10 +181,11 @@
     color: var(--headerColor);
   }
 
-  h1 {
-    font-size: 2em;
-    margin-block: 0em;
+ :where(h1) {
+      font-size: 2em;
+      margin-block: 0.67em;
   }
+}
 
   p,
   li,
