@@ -39,9 +39,6 @@
     display: block;
   }
 
-  h1.cs-title {
-     font-size: var(--headerFontSize);
-    }
 
 
   .cs-title {
@@ -51,6 +48,13 @@
     // margin: 0 auto (16/16rem); --> uncomment to add margin to the top and bottom of the title
     color: var(--headerColor);
     position: relative;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 4vw, 3.0625rem); // Taille explicite pour Lighthouse
+    font-weight: 900;
+    line-height: 1.2em;
+    color: var(--headerColor);
   }
 
   .cs-text {
@@ -176,13 +180,9 @@
 
   
 
-  h1 {
-    font-size: 2em;
-    color: var(--headerColor);
-  }
-
+ 
   
-
+  h1,
   h2,
   h3,
   h4,
