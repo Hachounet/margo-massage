@@ -13,6 +13,7 @@ const { h1Choice } = Astro.props;
 ---
 
 <!-- ============================================ --><!--                Side by Side                  --><!-- ============================================ -->
+ 
 <section id="sbs-1883">
   <div class="cs-container">
     <div class="cs-image-group">
@@ -86,6 +87,12 @@ const { h1Choice } = Astro.props;
 
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
+
+  h1 {
+  margin-block: 0.67em;
+  font-size: 2em;
+}
+
   #sbs-1883 {
     width: 100%;
     padding: var(--sectionPadding);
